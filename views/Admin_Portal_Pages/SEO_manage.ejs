@@ -1,0 +1,242 @@
+<% include Admin_Templates_Pages/adminHeader.ejs %>
+<div class="col-lg-10">
+    <div class="col-lg-10">
+        <% include messages.ejs %>
+    </div>
+    <div class="content-area">
+        <div class="col-lg-10  admin_type_manage_heading">
+            <h3>SEO Management</h3>
+            <a role="button" class="btn" id="add_Permission_Btn" data-toggle="modal" onclick="emptyField()"
+                data-target="#settingModal" onclick="setNull_to_Add_SEO_btn()">Add SEO </a>
+            <h4>List Of SEO</h4>
+
+
+            <div class="row show_number_ofPages form-group">
+                <label>
+                    Show Numbers Of Rows
+                </label>
+
+                <div class="form-group col-lg-5">
+                    <!--		Show Numbers Of Rows 		-->
+                    <select class="form-control" name="state" id="maxRows">
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="70">70</option>
+                        <option value="100">100</option>
+                        <option value="5000">Show ALL Rows</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-10">
+            <table class="table admin_Manage_Table" id="admin_Management_Table">
+                <thead>
+                    <tr>
+                        <th>Page Name</th>
+                        <th>Title</th>
+                        <th>Key Word</th>
+                        <th>Description</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <!-- Button trigger modal -->
+                        <td><a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td><a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TeleSales</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td><a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SEO Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td><a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>News Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td><a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Content Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td>Super Admin</td>
+                        <td><a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--		Start Pagination -->
+<div class='pagination-container'>
+    <nav>
+        <ul class="pagination">
+            <!--	Here the JS Function Will Add the Rows -->
+        </ul>
+    </nav>
+</div>
+<div class="rows_count">Showing 11 to 20 of 91 entries</div>
+
+
+
+<div class="modal fade settingModal" id="settingModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Manage SEO</h5>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <div class="col-lg-6">
+                    <label for="Name">Page Name</label>
+                    <input type="text" class="form-control" placeholder="Packages, DID, Etc" id="type_Name">
+
+                    <label for="id">Title</label>
+                    <input type="text" class="form-control" id="seo_title" placeholder="DID, Packages">
+
+                </div>
+
+                <div class="col-lg-12">
+                    <label for="Name">Key Word</label>
+                    <textarea name="seo_keyword" id="seo_keyword" cols="10" rows="2" class="form-control"></textarea>
+
+                    <label for="id">Description</label>
+                    <textarea name="seo_description" class="form-control" id="seo_description" cols="10"
+                        rows="2"></textarea>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+                <div class="col-lg-12">
+                    <a role="button" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a role="submit" class="btn btn-danger" name="delete" value="dddddd">Delete</a>
+                    <a role="submit" class="btn btn-primary" name="save">Save </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    // <!-- getting the values from the table and assigning into the model -->
+    var table = document.getElementById("admin_Management_Table")
+    function emptyField() {
+        document.getElementById('type_Name').value = ''
+    }
+
+    for (var i = 1; i < table.rows.length; i++) {
+        table.rows[i].querySelector('a').onclick = function () {
+            document.getElementById('type_Name').value = this.closest('tr').cells[1].innerHTML
+            document.getElementById('seo_title').value = this.closest('tr').cells[2].innerHTML
+            document.getElementById('seo_keyword').value = this.closest('tr').cells[3].innerHTML
+            document.getElementById('seo_description').value = this.closest('tr').cells[4].innerHTML
+        };
+    }
+
+    // setting the inputs of the model null for the add seo button
+    function setNull_to_Add_SEO_btn() {
+        document.getElementById('type_Name').value = null
+        document.getElementById('seo_title').value = null
+        document.getElementById('seo_keyword').value = null
+        document.getElementById('seo_description').value = null
+    }
+
+
+</script>
+
+<!-- setting the js files like the jQuery and table Pagination -->
+<script src="/js/jQuery Files/jquery-3.5.1.js" type="text/javascript"></script>
+<script src="/js/jQuery Files/jquery-3.5.1.min.js" type="text/javascript"></script>
+<script src="/js/tablePagination.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade settingModal" id="settingModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-6">
+                    <label for="Name">Page Name</label>
+                    <input type="text" class="form-control" placeholder="Packages, DID, Etc" id="type_Name">
+
+                    <label for="id">Title</label>
+                    <input type="text" class="form-control" id="seo_title" placeholder="DID, Packages">
+
+                </div>
+
+                <div class="col-lg-12">
+                    <label for="Name">Key Word</label>
+                    <textarea name="seo_keyword" id="seo_keyword" cols="10" rows="2" class="form-control"></textarea>
+
+                    <label for="id">Description</label>
+                    <textarea name="seo_description" class="form-control" id="seo_description" cols="10"
+                        rows="2"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

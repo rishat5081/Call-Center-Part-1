@@ -1,0 +1,213 @@
+<% include Admin_Templates_Pages/adminHeader.ejs %>
+<div class="col-lg-10">
+    <div class="col-lg-10">
+        <% include messages.ejs %>
+    </div>
+    <div class="content-area">
+        <div class="col-lg-10  admin-manage-heading">
+            <h3>DID Packages Management</h3>
+            <a role="button" class="btn" id="add_Permission_Btn" data-toggle="modal" data-target="#packagesModel"
+                onclick="emptyField()">Add Admin</a>
+
+
+
+            <div class="row show_number_ofPages form-group">
+                <label>
+                    Show Numbers Of Rows
+                </label>
+                <div class="form-group col-lg-5">
+                    <!--		Show Numbers Of Rows 		-->
+                    <select class="form-control" name="state" id="maxRows">
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="70">70</option>
+                        <option value="100">100</option>
+                        <option value="5000">Show ALL Rows</option>
+                    </select>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-10">
+            <table class="table admin_Manage_Table" id="package_Management_Table">
+                <thead>
+                    <tr>
+                        <th>Package Name</th>
+                        <th>Single DID</th>
+                        <th>With Channels</th>
+                        <th>Add Channel</th>
+                        <th>Special No. 111,222</th>
+                        <th>0900 Series</th>
+                        <th>Sub Domain</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                  
+                        <td>Starter</td>
+                        <td>10</td>
+                        <td>25 GB</td>
+                        <td>20</td>
+                        <td>25 GB</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <!-- Button trigger modal -->
+                        <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                    
+                        <td>Silver</td>
+                        <td>10</td>
+                        <td>25 GB</td>
+                        <td>20</td>
+                        <td>25 GB</td>
+                        <td>10</td>
+                        <td>20</td>
+
+                        <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                       
+                        <td>Gold</td>
+                        <td>10</td>
+                        <td>25 GB</td>
+                        <td>20</td>
+                        <td>25 GB</td>
+                        <td>10</td>
+                        <td>20</td>
+
+                        <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                    
+                        <td>Platinum</td>
+                        <td>10</td>
+                        <td>25 GB</td>
+                        <td>20</td>
+                        <td>25 GB</td>
+                        <td>10</td>
+                        <td>20</td>
+
+                        <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                   
+                        <td>Customize</td>
+                        <td>10</td>
+                        <td>25 GB</td>
+                        <td>20</td>
+                        <td>25 GB</td>
+                        <td>10</td>
+                        <td>20</td>
+
+
+                        <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade packagesModel" id="packagesModel" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change Package</h5>
+                </div>
+                <div class="modal-body modalBody" id="modalBody">
+                    <div class="col-lg-6">
+                        <label for="id">ID</label>
+                        <input type="text" class="form-control" id="package_ID" placeholder="#Auto Generated" disabled>
+                        <label for="Name">Name</label>
+                        <input type="text" class="form-control" placeholder="Starter, Gold etc" id="package_Name">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="contact">Price</label>
+                        <input type="text" class="form-control" placeholder="10$,20$ " id="package_price">
+                        <label for="contact">Disk Space</label>
+                        <input type="text" class="form-control" placeholder="10GB,20GB " id="disk_type">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="Email">Email Account</label>
+                        <input type="email" class="form-control" id="email_account" placeholder="10,20,30">
+                        <label for="Type">Bandwidth</label>
+                        <input type="text" class="form-control" placeholder="10GB,20GB" id="monhly_bandwidth">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <label for="contact">Domain</label>
+                        <input type="text" class="form-control" placeholder="10,20,30" id="package_subdomain">
+                        <label for="contact">Sub Domain</label>
+                        <input type="text" class="form-control" placeholder="10,20,30" id="package_domain">
+                    </div>
+                </div>
+                <hr>
+                <div class="modal-footer">
+                    <a role="button" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a role="submit" class="btn btn-danger" name="delete" value="dddddd">Delete</a>
+                    <a role="submit" class="btn btn-primary" name="save">Save </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--		Start Pagination -->
+<div class='pagination-container'>
+    <nav>
+        <ul class="pagination">
+            <!--	Here the JS Function Will Add the Rows -->
+        </ul>
+    </nav>
+</div>
+<div class="rows_count">Showing 11 to 20 of 91 entries</div>
+
+
+
+
+
+<script>
+    var table = document.getElementById("package_Management_Table")
+    for (var i = 1; i < table.rows.length; i++) {
+        table.rows[i].querySelector('a').onclick = function () {
+
+            document.getElementById('package_ID').value = this.closest('tr').cells[0].innerHTML
+            document.getElementById('package_Name').value = this.closest('tr').cells[1].innerHTML
+            document.getElementById('package_price').value = this.closest('tr').cells[2].innerHTML
+            document.getElementById('disk_type').value = this.closest('tr').cells[3].innerHTML
+            document.getElementById('email_account').value = this.closest('tr').cells[4].innerHTML
+            document.getElementById('monhly_bandwidth').value = this.closest('tr').cells[5].innerHTML
+            document.getElementById('package_subdomain').value = this.closest('tr').cells[6].innerHTML
+            document.getElementById('package_domain').value = this.closest('tr').cells[7].innerHTML
+
+        };
+    }
+</script>
+<script src="/js/jQuery Files/jquery-3.5.1.js"></script>
+<script src="/js/jQuery Files/jquery-3.5.1.min.js"></script>
+<script src="/js/tablePagination.js"></script>

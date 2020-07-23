@@ -1,0 +1,449 @@
+<% include Web_Template_Pages/header.ejs %>
+<div class="content">
+  <section class="bannersec">
+    <div class="container">
+      <div class="row">
+        <div class="form">
+          <h1>FREE TEST DEMO</h1>
+          <h3 style="margin-left: 230px;">You Click, We Connect</h3>
+          <input type="text" name="What do you want to Call" placeholder="What do you want to Call">
+          <input id="phone" type="phone" placeholder="Your Number">
+          <button type="submit" id="SUBMIT">Submit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rates">
+    <div class="container">
+      <div class="row">
+        <div class="cntry">
+          <div class="heading">
+            <h2>See our <span style="color: #279cd8;">rates</span></h2>
+          </div>
+          <ul>
+          </ul>
+          <ul>
+            <form action="/seeAllrate_mainPage" method="post">
+              <li>
+                <div class="rt-img">
+                  <img src="pic/country Flag/Flag_of_United States of America.png">
+                </div>
+                <div class="rt-txt">
+                  <p>Landline <span><%=sqlResponse[6].New_Rate%> %>$</span></p>
+                  <p>Cellular <span><%=sqlResponse[7].New_Rate%> %>$</span></p>
+                  <button name="countryRates" value="America">View Details</button>
+                </div>
+              </li>
+              <li>
+                <div class="rt-img">
+                  <img src="pic/country Flag/Flag_of_Canada.png">
+                </div>
+                <div class="rt-txt">
+                  <p>Landline <span><%=sqlResponse[0].New_Rate%> %>$</span></p>
+                  <p>Cellular <span><%=sqlResponse[1].New_Rate%> %>$</span></p>
+                  <button name="countryRates" value="Canada">View Details</button>
+                </div>
+              </li>
+              <li>
+                <div class="rt-img">
+                  <img src="pic/country Flag/Flag_of_Pakistan.png">
+                </div>
+                <div class="rt-txt">
+                  <p>Landline <span><%=sqlResponse[4].New_Rate%> %>$</span></p>
+                  <p>Cellular <span><%=sqlResponse[5].New_Rate%> %>$</span></p>
+                  <button name="countryRates" value="Pakistan">View
+                    Details</button>
+                </div>
+              </li>
+              <li>
+                <div class="rt-img">
+                  <img src="pic/country Flag/Flag_of_India.png">
+                </div>
+                <div class="rt-txt">
+                  <p>Landline <span><%=sqlResponse[2].New_Rate%> %>$</span></p>
+                  <p>Cellular <span><%=sqlResponse[3].New_Rate%> %>$</span></p>
+                  <button name="countryRates" value="India">View Details</button>
+                </div>
+              </li>
+          </ul>
+          </form>
+          <a href="/seeAllRates">
+            <button class="al-rt">See All our rates</button>
+        </div>
+
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ==============================How it works============================== -->
+  <section class="working">
+    <div class="container">
+      <div class="row">
+        <div class="steps">
+          <div class="heading" id="white">
+            <h2>HOW IT <span style="color: #279cd8;">WORKS</span></h2>
+          </div>
+          <ul>
+            <li>
+              <h4>01</h4>
+              <h3>Registraton</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              </p>
+            </li>
+            <li>
+              <h4>02</h4>
+              <h3>Choose Tarif</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              </p>
+            </li>
+            <li>
+              <h4>03</h4>
+              <h3>Pay & Activation</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              </p>
+            </li>
+            <li>
+              <h4>04</h4>
+              <h3>Go to Any Where</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==============================How it works============================== -->
+  <!-- =============================mobile-section============================= -->
+  <section class="mobile">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="image-block">
+            <img src="pic/iphone-chat.png">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="content-block">
+            <h2>Free download now</h2>
+            <ul>
+              <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Add 2 Add</li>
+              <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Call every where</li>
+              <li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Get 2 Call</li>
+            </ul>
+            <div class="apps-badge">
+              <a href=""><img src="pic/google-play.png"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =============================mobile-section============================= -->
+  <!-- ==============================price-table============================== -->
+  <section class="package">
+    <div class="container">
+      <div class="row">
+        <div class="heading">
+          <h2>OUR <span style="color: #279cd8;">packages</span></h2>
+        </div>
+        <div class="table">
+
+          <ul>
+            <li>
+              <div class="price">
+                <h3>$10/Month</h3>
+              </div>
+              <h2>Starter</h2>
+              <div class="points">
+                <ul>
+                  <li>20Gb Disk Space</li>
+                  <li>20 Email Accounts </li>
+                  <li>20Gb Monthly Bandwidths</li>
+                  <li>10 Subdomains</li>
+                  <li>20 Domains</li>
+                </ul>
+                <button>Sign Up</button>
+              </div>
+            </li>
+            <li>
+              <div class="price">
+                <h3>$10/Month</h3>
+              </div>
+              <h2>Silver</h2>
+              <div class="points">
+                <ul>
+                  <li>20Gb Disk Space</li>
+                  <li>20 Email Accounts </li>
+                  <li>20Gb Monthly Bandwidths</li>
+                  <li>10 Subdomains</li>
+                  <li>20 Domains</li>
+                </ul>
+                <button>Sign Up</button>
+              </div>
+            </li>
+            <li>
+              <div class="price">
+                <h3>$10/Month</h3>
+              </div>
+              <h2>Gold</h2>
+              <div class="points">
+                <ul>
+                  <li>20Gb Disk Space</li>
+                  <li>20 Email Accounts </li>
+                  <li>20Gb Monthly Bandwidths</li>
+                  <li>10 Subdomains</li>
+                  <li>20 Domains</li>
+                </ul>
+                <button>Sign Up</button>
+              </div>
+            </li>
+            <li>
+              <div class="price">
+                <h3>$10/Month</h3>
+              </div>
+              <h2>Platinum</h2>
+              <div class="points">
+                <ul>
+                  <li>20Gb Disk Space</li>
+                  <li>20 Email Accounts </li>
+                  <li>20Gb Monthly Bandwidths</li>
+                  <li>10 Subdomains</li>
+                  <li>20 Domains</li>
+                </ul>
+                <button>Sign Up</button>
+              </div>
+            </li>
+            <li>
+              <div class="price">
+                <h3>$10/Month</h3>
+              </div>
+              <h2>Customize</h2>
+              <div class="points">
+                <ul>
+                  <li>20Gb Disk Space</li>
+                  <li>20 Email Accounts </li>
+                  <li>20Gb Monthly Bandwidths</li>
+                  <li>10 Subdomains</li>
+                  <li>20 Domains</li>
+                </ul>
+                <button>Sign Up</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==============================price-table============================== -->
+  <!-- ==============================testmonials============================== -->
+  <section class="customer-review">
+    <div class="container">
+      <div class="row">
+        <div class="heading" id="white">
+          <h2>what they <span style="color: #279cd8;">say</span></h2>
+        </div>
+        <div id="carousel">
+          <div class="btn-bar">
+            <div id="buttons"><a id="prev" href="#"></a><a id="next" href="#"></a> </div>
+          </div>
+          <div id="slides">
+            <ul>
+              <li class="slide">
+                <div class="quoteContainer">
+                  <p class="quote-phrase"><span class="quote-marks">"</span> I was literally BLOWN AWAY by Company A's
+                    work! They went above and beyond all of our expectations with design, usability. and branding, I
+                    will reccommend them to everyone I know!<span class="quote-marks">"</span>
+
+                  </p>
+                </div>
+                <div class="authorContainer">
+                  <p class="quote-author">John Doe </p>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="quoteContainer">
+                  <p class="quote-phrase"><span class="quote-marks">"</span>
+                    I could not stop staring! Company A's Web Solutions are by far the most elegant solutions, you can't
+                    beat their quality and attention to detail!
+                    <span class="quote-marks">"</span>
+
+                  </p>
+                </div>
+                <div class="authorContainer">
+                  <p class="quote-author">Andy Fakename // CEO: Andy's Camping Supplies</p>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="quoteContainer">
+                  <p class="quote-phrase"><span class="quote-marks">"</span>Carl Fakeguy, was the most helpful designer
+                    I've ever hired. He listened to my ideas and advised against things that could negatively affect my
+                    CEO. Company A is by far the most generous and helpful company, 5/5!<span
+                      class="quote-marks">"</span>
+
+                  </p>
+                </div>
+                <div class="authorContainer">
+                  <p class="quote-author">Janice Falsename</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- ==============================testmonials============================== -->
+
+
+  <% include Web_Template_Pages/footer.ejs %>
+
+
+
+  
+</div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    //rotation speed and timer
+    var speed = 5000;
+
+    var run = setInterval(rotate, speed);
+    var slides = $('.slide');
+    var container = $('#slides ul');
+    var elm = container.find(':first-child').prop("tagName");
+    var item_width = container.width();
+    var previous = 'prev'; //id of previous button
+    var next = 'next'; //id of next button
+    slides.width(item_width); //set the slides to the correct pixel width
+    container.parent().width(item_width);
+    container.width(slides.length * item_width); //set the slides container to the correct total width
+    container.find(elm + ':first').before(container.find(elm + ':last'));
+    resetSlides();
+
+
+    //if user clicked on prev button
+
+    $('#buttons a').click(function (e) {
+      //slide the item
+
+      if (container.is(':animated')) {
+        return false;
+      }
+      if (e.target.id == previous) {
+        container.stop().animate({
+          'left': 0
+        }, 1500, function () {
+          container.find(elm + ':first').before(container.find(elm + ':last'));
+          resetSlides();
+        });
+      }
+
+      if (e.target.id == next) {
+        container.stop().animate({
+          'left': item_width * -2
+        }, 1500, function () {
+          container.find(elm + ':last').after(container.find(elm + ':first'));
+          resetSlides();
+        });
+      }
+
+      //cancel the link behavior            
+      return false;
+
+    });
+
+    //if mouse hover, pause the auto rotation, otherwise rotate it    
+    container.parent().mouseenter(function () {
+      clearInterval(run);
+    }).mouseleave(function () {
+      run = setInterval(rotate, speed);
+    });
+
+
+    function resetSlides() {
+      //and adjust the container so current is in the frame
+      container.css({
+        'left': -1 * item_width
+      });
+    }
+
+  });
+  //a simple function to click next link
+  //a timer will call this function, and the rotation will begin
+
+  function rotate() {
+    $('#next').click();
+  }
+</script>
+<script type="text/javascript">
+  (function ($) {
+    $.fn.menumaker = function (options) {
+      var cssmenu = $(this), settings = $.extend({
+        format: "dropdown",
+        sticky: false
+      }, options);
+      return this.each(function () {
+        $(this).find(".button").on('click', function () {
+          $(this).toggleClass('menu-opened');
+          var mainmenu = $(this).next('ul');
+          if (mainmenu.hasClass('open')) {
+            mainmenu.slideToggle().removeClass('open');
+          }
+          else {
+            mainmenu.slideToggle().addClass('open');
+            if (settings.format === "dropdown") {
+              mainmenu.find('ul').show();
+            }
+          }
+        });
+        cssmenu.find('li ul').parent().addClass('has-sub');
+        multiTg = function () {
+          cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+          cssmenu.find('.submenu-button').on('click', function () {
+            $(this).toggleClass('submenu-opened');
+            if ($(this).siblings('ul').hasClass('open')) {
+              $(this).siblings('ul').removeClass('open').slideToggle();
+            }
+            else {
+              $(this).siblings('ul').addClass('open').slideToggle();
+            }
+          });
+        };
+        if (settings.format === 'multitoggle') multiTg();
+        else cssmenu.addClass('dropdown');
+        if (settings.sticky === true) cssmenu.css('position', 'fixed');
+        resizeFix = function () {
+          var mediasize = 1000;
+          if ($(window).width() > mediasize) {
+            cssmenu.find('ul').show();
+          }
+          if ($(window).width() <= mediasize) {
+            cssmenu.find('ul').hide().removeClass('open');
+          }
+        };
+        resizeFix();
+        return $(window).on('resize', resizeFix);
+      });
+    };
+  })(jQuery);
+
+  (function ($) {
+    $(document).ready(function () {
+      $("#cssmenu").menumaker({
+        format: "multitoggle"
+      });
+    });
+  })(jQuery);
+
+</script>
+</body>
+
+</html>

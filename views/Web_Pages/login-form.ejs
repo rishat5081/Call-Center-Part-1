@@ -1,0 +1,61 @@
+<% include Web_Template_Pages/header.ejs %>
+<div class="content">
+  <section class="login">
+    <div class="container">
+      <div class="center">
+        <div class="frm">
+
+          <div style="color: brown">
+            <% if (messages.error) { %>
+            <%= messages.error %>
+            <% } %>
+
+          </div>
+          <form action="/login-form" method="POST">
+            <div class="login-form-group">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              <input type="text" name="email" placeholder="Email">
+            </div>
+            <br>
+            <div class="login-form-group">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+              <input type="password" name="password" placeholder="Password">
+            </div>
+            
+            <div class="forget">
+              <ul>
+                <li>
+                  <input type="checkbox" name="remembermeCheck_Box"> Remember Me
+                </li>
+                <li>
+                  <a href="/forgetPassword"> Forgot Password?</a>
+                </li>
+              </ul>
+            </div>
+            <br><br><br><br>
+            <br><br><br><br>
+            <button type="submit">LOGIN</button>
+          </form>
+          <button onclick="window.location.href = '/signup'"> SIGNUP</button>
+          <!-- <div class="or">
+              <p>Or Signup</p>
+            </div> -->
+          <div class="login-social">
+            <ul>
+              <li class="Facebook"><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li class="google"><a href=""><i class="fa fa-google" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <% include Web_Template_Pages/footer.ejs %>
+
+
+
+</div>
+</body>
+
+</html>

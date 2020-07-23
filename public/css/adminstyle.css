@@ -1,0 +1,470 @@
+.homeAdminLogin {
+    margin-top: 17%;
+    border: 1px solid;
+    width: 50%;
+    height: 50%;
+}
+
+.homeAdminLogin ::placeholder {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.homeAdminLogin input {
+    width: 25%;
+    padding: 0.5%;
+    place-items: inherit;
+    margin-left: 35%;
+}
+
+.homeAdminLogin button {
+    margin-top: 3%;
+    display: block;
+    padding: 10px 40px;
+    background: #ffffff;
+    color: black;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1px solid #676767;
+    position: relative;
+    margin-bottom: 7%;
+    margin-left: 45%;
+    outline: none;
+}
+
+.homePage_Logo img {
+    height: 140px;
+    width: 220px;
+    float: left;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+.myform {
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 1.1rem;
+    outline: 0;
+    max-width: 500px;
+    margin-left: 60%;
+    margin-top: 35%;
+}
+
+.myform button {
+    margin-bottom: 5%;
+}
+
+/****************************************************        Navigation Bar           ***************************************************/
+
+/* .containers {
+    width: 100% !important;
+} */
+
+/* .containerss {
+    left: 0px;
+    top: 0px;
+} */
+
+.header {
+    background-color: #292B2C;
+    display: inline-block;
+    width: 100%;
+}
+
+/* title profile image */
+
+.header img {
+    margin-top: 9px;
+    margin-left: 35px;
+    float: left;
+    height: 40px;
+    width: 60px;
+    margin-right: 2%;
+    border: 1px solid #279cd8;
+    margin-bottom: 5px;
+}
+
+/* user profile image */
+
+#headers_img {
+    margin-top: 7px;
+    float: right;
+    height: 40px;
+    width: 60px;
+    margin-right: 2%;
+    border: 1px solid #279cd8;
+}
+
+.header h3 {
+    color: #279cd8;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    float: right;
+    margin-top: 14px;
+}
+
+#header_Buuton {
+    color: #279cd8;
+    font-size: 15px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border: 1px solid #279cd8 !important;
+    padding: 3px 10px;
+    margin-right: 15px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    margin-top: 10px;
+    float: right;
+}
+
+#header_Buuton:hover {
+    color: white;
+    border: 1px solid white !important;
+}
+
+/****************************************************        Side Bar           ***************************************************/
+
+.sidenav {
+    /* margin-left: 3%; */
+    height: 100%;
+    top: 0;
+    padding-top: 5px;
+    left: 0;
+    margin-top: -2%;
+    background-color: #292B2C;
+    padding: 5%;
+}
+
+.sidenav a {
+    color: #279cd8;
+    font-size: 16px;
+    border: 1px solid #292B2C !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    width: 75%;
+    text-align: left;
+}
+
+.sidenav img {
+    float: left;
+    height: 15px;
+    width: 20px;
+    margin-bottom: 5%;
+    margin-right: 4%;
+}
+
+.sidenav hr {
+    border: 0.5px solid #279cd8;
+}
+
+.sidenav a {
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content-area {
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+/****************************************************      Admin Management Page         ***************************************************/
+
+.admin_Manage_Table {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+}
+
+.admin_Manage_Table th {
+    background-color: #292B2C;
+    color: #279cd8;
+    padding: 2%;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.admin_Manage_Table td {
+    padding: 2%;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+.admin_Manage_Table button {
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.modalBody input {
+    padding: 3%;
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.admin-manage-heading a {
+    float: right;
+    color: #279cd8;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+/****************************************************      Admin Type Management Page         ***************************************************/
+
+.admin_type_Table th {
+    background-color: #292B2C;
+    color: #279cd8;
+    padding: 2%;
+    border: 1px solid transparent;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+.admin_type_manage_heading a {
+    float: right;
+    color: #279cd8;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    text-align: center;
+}
+
+.admin_type_Table td {
+    padding: 2%;
+    text-align: center;
+    /* border-right: 1px solid black; */
+}
+
+.admin_type_Table button {
+    border: none;
+    outline: none;
+    background-color: white;
+    /* border: 1px solid black; */
+}
+
+.settingModal {
+    margin-top: 10%;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* #add_Permission_Btn {
+    float: right;
+    margin-bottom: 7px;
+} */
+
+.show_number_ofPages {
+    display: inline-block;
+}
+
+.show_number_ofPages {
+    margin-top: 2%;
+}
+
+.show_number_ofPages label {
+    float: left;
+}
+
+.show_number_ofPages select {
+    float: left;
+}
+
+/****************************************************      Permission Management Page         ***************************************************/
+
+.permission_manage_heading a {
+    float: right;
+    color: #279cd8;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    text-align: center;
+}
+
+/****************************************************      Type of Permissions Page         ***************************************************/
+
+.type_of_permission a {
+    float: right;
+    color: #279cd8;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    text-align: center;
+}
+
+/****************************************************      DID Rate List Upload Page         ***************************************************/
+
+.input-file-container {
+    position: relative;
+    width: 13%;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.file-return {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 40%;
+}
+
+.input-file-trigger {
+    display: block;
+    padding: 14px 45px;
+    background: #292B2C;
+    color: #279cd8;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.input-file {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.instruction {
+    margin-left: 3%;
+}
+
+.instruction h4 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
+    padding-left: 1px;
+}
+
+.instruction p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 3%;
+    font-size: 16px;
+}
+
+.upload_CSVFILE {
+    width: 15%;
+    margin-top: 7%;
+    margin-left: 39%;
+    color: white;
+    font-weight: 600;
+    color: #279cd8;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    text-align: center;
+}
+
+/****************************************************      CMS        ***************************************************/
+
+.cms-form-heading a {
+    float: right;
+    color: #279cd8;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    text-align: center;
+}
+
+.cms-form-heading {
+    background-color: #d8e9ef4f;
+    padding: 1px;
+    margin: 1%;
+}
+
+.cms-form-heading h4 {
+    margin-left: 1%;
+}
+
+.dropdown select {
+    padding: 1%;
+    width: 100%;
+    outline: none;
+}
+
+.cms-input-title-name input {
+    width: 200%;
+}
+
+.dropdown-menu {
+    width: 100%;
+}
+
+.cms_page_content a {
+    margin-top: 5%;
+    color: #279cd8;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    text-align: center;
+    width: 15%;
+    margin-left: 37%;
+}
+
+#newPage_Content {
+    margin-top: 7%;
+    /* display: inline-block; */
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/****************************************************      CMS        ***************************************************/
+
+.setting-update-btn a {
+    margin-top: 5%;
+    color: #279cd8;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    text-align: center;
+    margin-left: 47%;
+}
+
+/****************************************************     Package Management Page       ***************************************************/
+
+.package-manage-heading {
+    margin-bottom: 2%;
+}
+
+.packagesModel {
+    margin-top: 10%;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/****************************************************     Package Management Page       ***************************************************/
+
+/****************************************************     News Feed Management Page       ***************************************************/
+
+.news_feed-manage-heading {
+    margin-bottom: 2%;
+}
+
+.news_feed-content a {
+    margin-top: 5%;
+    color: #279cd8;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #292B2C;
+    text-align: center;
+    margin-left: 40%;
+    width: 15%;
+}

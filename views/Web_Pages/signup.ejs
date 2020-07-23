@@ -1,0 +1,103 @@
+<% include Web_Template_Pages/header.ejs %>
+
+
+<section class="login">
+
+  <div class="row">
+    <div class="frm">
+
+      <div style="color: brown">
+        <% if (messages.error) { %>
+        <%= messages.error %>
+        <% } %>
+      </div>
+      <form action="/signup" method="POST">
+
+        <div class="form-group">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input id='signup_username' type="text" name="username" placeholder="User Name">
+        </div>
+
+        <div class="form-group">
+          <i class="fa fa-id-card-o" aria-hidden="true"></i>
+          <input id='name' type="text" name="name" placeholder="Name">
+        </div>
+
+        <div class="form-group">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <input id='signup_email' type="text" name="reg_email" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <input id='password' type="password" name="reg_password" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <input id='signup_confirmPassword' type="password" name="confirm_password" placeholder="Confirm Password">
+        </div>
+
+
+        <div class="form-group">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <%include Web_Template_Pages/countries_list.ejs%>
+        </div>
+
+        <div class="form-group">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          <span id="country_code_prefix"></span>
+          <script>
+            //  document.getElementById('country_code_prefix').style.display = 'none'
+            document.getElementById('country_drop_down_list').disabled = false
+            document.getElementById('country_drop_down_list').style.opacity = 1
+
+          </script>
+          <input type="text" id='signup_phoneNumber' name="number" placeholder="Phone No">
+        </div>
+
+        <div class="form-group">
+          <i class="fa fa-building-o" aria-hidden="true"></i>
+          <input id='signup_city' type="text" name="signup_city" placeholder="City">
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-xs-12" style="margin-left: 2%;">
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <select name="SignUpAs" id="signup_as" required>
+            <option>Sign Up As</option>
+            <option value="Customer">Customer</option>
+            <option value="Whole Seller">WholeSeller</option>
+            <option value="Agent">Agent</option>
+          </select>
+
+        </div>
+        <div class="forget">
+          <ul>
+            <li>
+              <input type="checkbox"> Remember Me
+            </li>
+            <li>
+              Forgot Password?
+            </li>
+          </ul>
+        </div>
+        <button type="submit" class="reg">SIGNUP</button>
+      </form>
+      <div class="or">
+        <p>Or Signup</p>
+      </div>
+      <div class="login-social">
+        <ul>
+          <li class="Facebook"><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li class="google"><a href=""><i class="fa fa-google" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<% include Web_Template_Pages/footer.ejs %>
+</div>
+</body>
+
+</html>

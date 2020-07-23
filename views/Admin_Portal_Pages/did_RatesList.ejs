@@ -1,0 +1,39 @@
+<% include Admin_Templates_Pages/adminHeader.ejs %>
+<div class="col-lg-10">
+    <div class="col-lg-10">
+        <% include messages.ejs %>
+    </div>
+    <div class="content-area">
+
+        <h3>Upload DID Rate List CSV File</h3>
+        <!-- <a role="button" class="btn btn-primary " id="add_Permission_Btn" data-toggle="modal"
+            data-target="#settingModal" onclick="emptyField()">Add Admin</a> -->
+
+        <div class="instruction">
+            <br>
+            <h4>&#x2022; Instruction</h4>
+            <p>&#9656; The CSV file should contain 4 columns.</p>
+            <p>&#9656; Column names should be Prefix, ISO, Route_VOIP, New_Rate.</p>
+            <p>&#9656; If column exceeds or decreases then it will be a problem database will not be updated.</p>
+        </div>
+        <div class="boxsss">
+            <div class="input-file-container">
+                <input class="input-file" id="my-file" type="file">
+                <label for="my-file" class="input-file-trigger">Select a file...</label>
+            </div>
+            <p class="file-return"></p>
+        </div>
+      
+        <a role="button" class="btn upload_CSVFILE" data-toggle="modal"
+            data-target="#settingModal">Upload</a>
+    </div>
+</div>
+<script>
+    //  document.querySelector("html").classList.add('js');
+
+    var fileInput = document.querySelector(".input-file"),
+        the_return = document.querySelector(".file-return");
+    fileInput.addEventListener("change", function (event) {
+        the_return.innerHTML = fileInput.files[0].name;
+    });
+</script>

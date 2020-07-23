@@ -1,0 +1,16 @@
+<%include  Web_Template_Pages/userProfile_headers.ejs%>
+
+
+<div class="col-lg-4">
+<h4 class="bg-warning" style="color: #100de4;"> <%= typeof message != 'undefined' ? message : '' %></h4>
+<form action="/userProfilePicture" method="POST" enctype="multipart/form-data">
+
+  <label> Choose a profile image </label> <input type="file" name="userProfilePicture">
+
+  <button type="submit" class="reg">Done</button>
+</form>
+
+</div>
+</div>
+</div>
+<% include  Web_Template_Pages/footer.ejs %>

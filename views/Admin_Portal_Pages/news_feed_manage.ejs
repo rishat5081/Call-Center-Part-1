@@ -1,0 +1,19 @@
+<% include Admin_Templates_Pages/adminHeader.ejs %>
+<div class="col-lg-10">
+    <% include messages.ejs %>
+</div>
+<div class="content-area">
+
+    <div class="col-lg-10  news_feed-manage-heading">
+        <h3>News Feed Management</h3>
+    </div>
+
+    <div class="col-lg-9 news_feed-content">
+        <textarea name="news_feed_text" id="news_feed_text" cols="80" rows="30"></textarea>
+        <a href="" role="button" class="form-control">Update</a>
+    </div>
+</div>
+<script src="/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('news_feed_text')
+</script>

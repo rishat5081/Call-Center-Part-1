@@ -1,0 +1,178 @@
+<% include Admin_Templates_Pages/adminHeader.ejs %>
+<div class="col-lg-10">
+  <div class="col-lg-10">
+    <% include messages.ejs %>
+  </div>
+  <div class="content-area">
+
+    <div class="col-lg-10  admin-manage-heading">
+      <h3>Package Management</h3>
+      <a role="button" class="btn" id="add_Permission_Btn" data-toggle="modal" data-target="#packagesModel"
+                onclick="emptyField()">Add Package</a>
+    </div>
+
+
+    <div class="col-lg-10">
+      <table class="table admin_Manage_Table" id="package_Management_Table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price $</th>
+            <th>Disk Space</th>
+            <th>Email Account</th>
+            <th>Bandwidth</th>
+            <th>Domain</th>
+            <th>Sub Domain</th>
+            <th>Manage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Starter</td>
+            <td>10</td>
+            <td>25 GB</td>
+            <td>20</td>
+            <td>25 GB</td>
+            <td>10</td>
+            <td>20</td>
+            <!-- Button trigger modal -->
+            <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img src="/pic/setting.png"
+                  height="15px" width="15px">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Silver</td>
+            <td>10</td>
+            <td>25 GB</td>
+            <td>20</td>
+            <td>25 GB</td>
+            <td>10</td>
+            <td>20</td>
+
+            <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img src="/pic/setting.png"
+                  height="15px" width="15px">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Gold</td>
+            <td>10</td>
+            <td>25 GB</td>
+            <td>20</td>
+            <td>25 GB</td>
+            <td>10</td>
+            <td>20</td>
+
+            <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img src="/pic/setting.png"
+                  height="15px" width="15px">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Platinum</td>
+            <td>10</td>
+            <td>25 GB</td>
+            <td>20</td>
+            <td>25 GB</td>
+            <td>10</td>
+            <td>20</td>
+
+            <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img src="/pic/setting.png"
+                  height="15px" width="15px">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Customize</td>
+            <td>10</td>
+            <td>25 GB</td>
+            <td>20</td>
+            <td>25 GB</td>
+            <td>10</td>
+            <td>20</td>
+           
+
+            <td> <a role="button" data-toggle="modal" data-target="#packagesModel"> <img src="/pic/setting.png"
+                  height="15px" width="15px">
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    var table = document.getElementById("package_Management_Table")
+    for (var i = 1; i < table.rows.length; i++) {
+      table.rows[i].querySelector('a').onclick = function () {
+
+        document.getElementById('package_ID').value = this.closest('tr').cells[0].innerHTML
+        document.getElementById('package_Name').value = this.closest('tr').cells[1].innerHTML
+        document.getElementById('package_price').value = this.closest('tr').cells[2].innerHTML
+        document.getElementById('disk_type').value = this.closest('tr').cells[3].innerHTML
+        document.getElementById('email_account').value = this.closest('tr').cells[4].innerHTML
+        document.getElementById('monhly_bandwidth').value = this.closest('tr').cells[5].innerHTML
+        document.getElementById('package_subdomain').value = this.closest('tr').cells[6].innerHTML
+        document.getElementById('package_domain').value = this.closest('tr').cells[7].innerHTML
+        //document.getElementById('admin_Added_Since').value = this.closest('tr').cells[8].innerHTML
+      };
+    }
+  </script>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade packagesModel" id="packagesModel" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Change Package</h5>
+        </div>
+        <div class="modal-body modalBody" id="modalBody">
+          <div class="col-lg-6">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="package_ID" placeholder="#Auto Generated" disabled>
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" placeholder="Starter, Gold etc" id="package_Name">
+          </div>
+          <div class="col-lg-6">
+            <label for="contact">Price</label>
+            <input type="text" class="form-control" placeholder="10$,20$ " id="package_price">
+            <label for="contact">Disk Space</label>
+            <input type="text" class="form-control" placeholder="10GB,20GB " id="disk_type">
+          </div>
+          <div class="col-lg-6">
+            <label for="Email">Email Account</label>
+            <input type="email" class="form-control" id="email_account" placeholder="10,20,30">
+            <label for="Type">Bandwidth</label>
+            <input type="text" class="form-control" placeholder="10GB,20GB" id="monhly_bandwidth">
+          </div>
+
+          <div class="col-lg-6">
+            <label for="contact">Domain</label>
+            <input type="text" class="form-control" placeholder="10,20,30" id="package_subdomain">
+            <label for="contact">Sub Domain</label>
+            <input type="text" class="form-control" placeholder="10,20,30" id="package_domain">
+          </div>
+        </div>
+        <hr>
+        <div class="modal-footer">
+          <a role="button" class="btn btn-default" data-dismiss="modal">Close</a>
+          <a role="submit" class="btn btn-danger" name="delete" value="dddddd">Delete</a>
+          <a role="submit" class="btn btn-primary" name="save">Save </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>

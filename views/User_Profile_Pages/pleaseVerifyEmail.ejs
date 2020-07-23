@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <section class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+
+                    <!-- this is done for the when the user is logged in then 
+              it will display profile and logout button
+              and all the remaining home page will be same
+              but if the user is not logged in 
+              and user clicks the voip image then it redirect
+              to the home with the login, signup button navigation bar -->
+
+
+                    <!--    And the user is logged in is detected by 
+              EJS_routes.js file there is a the method logged_In
+              there is the req.session.passport.user sends the res.locals.user 
+              the ejs file a value is detect by using simpel '"user"' variable  as stated in the below in -->
+
+
+                    <div class="btns">
+                        <ul>
+                            <a href="/logout">
+                                <li class="last-child"><i class="fa fa-credit-card" aria-hidden="true"></i>Log Out</li>
+                            </a>
+                            <!-- <a href="/user_profile">
+                                <li class="last-child"><i class="fa fa-credit-cawrd" aria-hidden="true"></i>My Profile
+                                </li> -->
+                            </a>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="col-lg-12" style="background-color: #292B2C; padding-bottom: 5%; padding-top: 5%;">
+        <div class="col-lg-9">
+            <img src="pic/verify.png" style="float: right; margin-right: 15%;" alt="verify Email Please" width="550px"
+                height="400px">
+        </div>
+        <div class="col-lg-6" style="float: right;margin-right: 9%; padding-top: 5%;">
+            <div>
+                <h2 style="color: #000000;">Please Verify Email</h2>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,99 @@
+<title>My Vallet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<%include  Web_Template_Pages/userProfile_headers.ejs%>
+
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #292B2C;
+      Color: white;
+    }
+
+    th,
+    td {
+      width: 150px;
+      text-align: center;
+      padding: 2px
+    }
+
+    .geeks {
+      border-right: hidden;
+    }
+
+    .gfg {
+      border-collapse: separate;
+      border-spacing: 0 5px;
+    }
+  </style>
+</head>
+
+<div class="col-sm-6">
+
+  <h2>My Vallet : <%=user_vallet_amount%> </h2>
+</div>
+
+<div class="col-sm-2">
+  <!-- triggering the modal  -->
+  <button class="usage_manage_button " data-toggle="modal" data-target="#myModal">Manage Vallet</button>
+</div>
+
+
+
+<!-- Table for the display of the user usage history where he/she spend the credit -->
+<div class="table-responsives col-lg-12">
+
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Call to</th>
+      <th>Duration</th>
+      <th>Call Rate($)</th>
+      <th>Total($)</th>
+    </tr>
+  </table>
+  <table class="gfg" id="myTable">
+    <tr>
+      <td>12-12-19</td>
+      <td>12:26</td>
+      <td>Thomas</td>
+      <td>1:01</td>
+      <td>0.01</td>
+      <td>1.52</td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Manage Vallet</h5>
+      </div>
+      <div class="modal-body">
+        <label>Add Credit to Vallet</label>
+        <input type="text" name="adduser_extention" id="">
+      </div>
+
+      <div class="modal-footer btn-group" role="group">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<% include  Web_Template_Pages/footer.ejs %>

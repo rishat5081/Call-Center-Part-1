@@ -1,0 +1,322 @@
+<% include Web_Template_Pages/header.ejs %>
+
+<!------------------------------------------------------------ Modal ------------------------------------------------------------>
+<!-- ----------------------------------------------------------for all the cities name except US ------------------------------------------------------------>
+<!--------------------------------------------------------- but it contains the states of the United States of America ------------------------------------------------------->
+
+
+
+
+<div class="modal fade modal-lg" id="allCountries_Modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="allCountries_Modal_title">Modal title</h3>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <img id="allCountries_Modal_img" alt="countryFlag" width="230" height="130">
+                </div>
+                <div class="did_capacities">
+                    <li class="list-group-item">MRC </li>
+                    <li class="list-group-item">NRC </li>
+
+                </div>
+
+                <ul class="list-group ul_ofDID_Modal">
+
+
+                    <li class="list-group-item">DID only
+                        <span id="did_Only_MRC"></span>
+                        <p id="did_Only_NRC"></p>
+                    </li>
+                    <li class="list-group-item">DID with Capacity
+                        <span id="did_With_Capacity_MRC"></span>
+                        <p id="did_With_Capacity_NRC"></p>
+                    </li>
+                </ul>
+                <h3 id="cities_of_country_heading"></h3>
+                <table class="table citiesName_table" id="citiesNames_Table">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" id="saveChnages_Modal_footer_btn">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----------------------------------------------------------- ---------- Modal ------------------------------------------------------------>
+<!------------------------------------------------------------ for coming soon countries ------------------------------------------------------------>
+<!-- Modal -->
+<div class="modal fade" id="US_Cities_Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="us_Cities_Modal_Heading"></h3>
+            </div>
+            <div class="modal-body">
+
+                <table class="table" id="US_cities_table">
+                    <tbody>
+                        <tr>
+
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" id="saveChnages_Modal_footer_btn">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!----------------------------------------------------------- ---------- Modal ------------------------------------------------------------>
+<!------------------------------------------------------------ for coming soon countries ------------------------------------------------------------>
+
+<div class="modal fade" id="comingSoon_Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2>Coming Soon</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!------------------------------------------------------------ landing page text ------------------------------------------------------------>
+
+
+<div class="col-lg-7">
+    <div class="didText">
+        <h1>Whole Sale DID's</h1>
+        <p>Voxbeam Telecommunications provides DIDs in over 50 countries around the world at prices starting as low
+            as $0.25 per number.</p>
+
+        <h2>Country overview</h2>
+        <p>Please click the country below to view the specific city coverage, pricing, and verification required..
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- countries flags  -->
+<!-- table of the country name and their flags main pages  -->
+
+<table class="table did_table">
+
+    <tr id="trs">
+        <!-- the correct syntax of the foreach loop -->
+
+        <% for (let index = 0; index < countryName_sqlResponse.length; index++) { %>
+        <td><a role="button" data-toggle="modal" name="did_Modal" onclick="fetch_CountryRates_triggerModel(this.id)"
+                id="<%=countryName_sqlResponse[index].did_countryName  %>" data-target="#myModal">
+                <img src="/pic/country Flag/Flag_of_<%=countryName_sqlResponse[index].did_countryName%>.png"
+                    width="45px" height="30px">
+                <%=countryName_sqlResponse[index].did_countryName  %>
+            </a>
+        </td>
+        <% if(index%4===3){ %>
+    </tr>
+    <%}%> 
+            <%  } %>
+</table>
+
+
+
+
+
+
+
+
+
+<script>
+    //getting the US cities and triggering the modal for the US country 
+    // it will be trigeered after the states of the US is displayed 
+    //after the States this modal will contain the cities of the state.
+    function getUS_Cities(stateName) {
+        $.ajax({
+            url: `/get_US_cities/${stateName}`,
+            cache: false,
+            method: "GET",
+            error: ((error) => {
+                console.log("There is Error at Ajax Call of the US cities")
+            }),
+            success: ((ajaxResponse_Of_US_Cities) => {
+
+                $("#us_Cities_Modal_Heading").html(ajaxResponse_Of_US_Cities.USsqlResponse[0].citiesName)
+                var US_cities_table = document.querySelector("#US_cities_table > tbody")
+
+                remove_TableBody(US_cities_table)
+                var temp = 0
+                var html
+                var length_Of_SQLResponse = ajaxResponse_Of_US_Cities.USsqlResponse.length
+                console.log(length_Of_SQLResponse);
+                ajaxResponse_Of_US_Cities.USsqlResponse.forEach(element => {
+                    // console.log(element.UScitiesName)
+                    // console.log(element.citiesName)
+                    // if the length is greater then the 3 then this 3 if else will be trigger
+                    if (temp === 0) {
+                        html =
+                            `<tr><td><a href='/did/didPurchase/${element.citiesName}/${element.UScitiesName}'>${element.UScitiesName}</td></a>`
+                        temp++;
+                    }
+                    else if (temp === 3) {
+                        html = html +
+                            `<td><a href='/did/didPurchase/${element.citiesName}/${element.UScitiesName}'>${element.UScitiesName}</a></td> </tr>`
+                        US_cities_table.innerHTML += html
+                        temp = 0
+                    }
+                    else {
+                        html = html +
+                            `<td><a href='/did/didPurchase/${element.citiesName}/${element.UScitiesName}'> ${element.UScitiesName}</a></td>`;
+                        temp++
+                    }
+
+                });
+                // if there is any city added into the html variable 
+                //and not added into the table body then this will be triggered    
+                US_cities_table.innerHTML += html
+                //triggering the modal to show.
+                $("#US_Cities_Modal").modal("show")
+                //console.log(ajaxResponse_Of_US_Cities.USsqlResponse)
+            })
+        })
+
+    }
+    // this is the function which will get the country cities name by using the main page country names with flag 
+    // and open the modal and display all the cities of the country 
+    // except United States of America
+    function fetch_CountryRates_triggerModel(countryName) {
+        $.ajax({
+            url: `/countryDID_Rate/${countryName}`,
+            cache: false,
+            method: "GET",
+            success: ((ajaxResult) => {
+
+                //console out if the country Name is null 
+                if (ajaxResult.sqlResponse === null) {
+                    $("#comingSoon_Modal").modal('show')
+                    console.log("Hello World");
+                }
+
+                else {
+                    // countries cities modal except US
+                    //modal heading , which will add the name of the country 
+                    $("#allCountries_Modal_title").html(ajaxResult.sqlResponse[0].did_countryName + ' (+' + ajaxResult.sqlResponse[0].Prefix + ')')
+                    //if the country name is US then it will be the state rather then cities
+                    if (ajaxResult.sqlResponse[0].did_countryName === 'United States of America')
+                        $("#cities_of_country_heading").html("States of " + ajaxResult.sqlResponse[0].did_countryName)
+                    // h3 heading for the cities of the country name
+                    else
+                        $("#cities_of_country_heading").html("Cities of " + ajaxResult.sqlResponse[0].did_countryName)
+                    //img src for the country flag
+                    $("#allCountries_Modal_img").attr("src", `pic/country Flag/Flag_of_${ajaxResult.sqlResponse[0].did_countryName}.png`)
+                    //all the did rates with capacity and without capacity 
+                    $("#did_Only_NRC").html('$' + ajaxResult.sqlResponse[0].did_only_NRC)
+                    $("#did_Only_MRC").html('$' + ajaxResult.sqlResponse[0].did_only_MRC)
+                    $("#did_With_Capacity_MRC").html('$' + ajaxResult.sqlResponse[0].did_capacity_MRC)
+                    $("#did_With_Capacity_NRC").html('$' + ajaxResult.sqlResponse[0].did_capacity_NRC)
+                    //setting the country cities name table
+
+
+                    var citiesName_Table_Body = document.querySelector("#citiesNames_Table > tbody")
+                    // removing the all tr if there is any
+                    remove_TableBody(citiesName_Table_Body)
+                    var temp = 0
+                    var html
+                    var length_Of_SQLResponse = ajaxResult.sqlResponse.length
+                    $.each(ajaxResult.sqlResponse, function (key, value) {
+
+                        if (value.did_countryName !== 'United States of America') { //if there is only one city then this will trigger
+                            if (length_Of_SQLResponse === 1) {
+                                html =
+                                    `<tr><td><a href="/did/didPurchase/${value.did_countryName}/${value.citiesName}">${value.citiesName}</a></td> </tr>`
+                            }
+                            // if the length is greater then the 3 then this 3 if else will be trigger
+                            if (temp === 0) {
+                                html =
+                                    `<tr><td><a href="/did/didPurchase/${value.did_countryName}/${value.citiesName}">${value.citiesName}</a></td>`
+                                temp++;
+                            }
+                            else if (temp === 3) {
+                                html = html +
+                                    `<td><a href="/did/didPurchase/${value.did_countryName}/${value.citiesName}">${value.citiesName}</a></td></tr>`
+                                citiesName_Table_Body.innerHTML += html
+                                temp = 0
+                            }
+                            else {
+                                html = html +
+                                    `<td><a href="/did/didPurchase/${value.did_countryName}/${value.citiesName}">${value.citiesName}</a></td>`;
+                                temp++
+                            }
+                        }
+                        else {
+                            if (length_Of_SQLResponse === 1) {
+                                html =
+                                    `<tr><td><a id ="${value.citiesName}" onclick="getUS_Cities(this.id)">${value.citiesName}</a></td> </tr>`
+                            }
+                            // if the length is greater then the 3 then this 3 if else will be trigger
+                            if (temp === 0) {
+                                html =
+                                    `<tr><td><a id ="${value.citiesName}" onclick ="getUS_Cities(this.id)">${value.citiesName}</a></td>`
+                                temp++;
+                            }
+                            else if (temp === 3) {
+                                html = html +
+                                    `<td><a id ="${value.citiesName}" onclick ="getUS_Cities(this.id)">${value.citiesName}</a></td></tr>`
+                                citiesName_Table_Body.innerHTML += html
+                                temp = 0
+                            }
+                            else {
+                                html = html +
+                                    `<td><a id ="${value.citiesName}" onclick ="getUS_Cities(this.id)">${value.citiesName}</a></td>`;
+                                temp++
+                            }
+                        }
+                    })
+                    // if there is any city added into the html variable and not added into the table body then this will be triggered    
+                    citiesName_Table_Body.innerHTML += html
+                    //triggering the modal to show.
+                    $("#allCountries_Modal").modal('show');
+                }
+            })
+        })
+    }
+    //removing of the table tr if there is any
+    function remove_TableBody(tableBody) {
+        while (tableBody.firstChild) {
+            tableBody.removeChild(tableBody.firstChild)
+        }
+    }
+</script>
+
+
+<% include Web_Template_Pages/footer.ejs %>

@@ -1,0 +1,552 @@
+<% include Admin_Templates_Pages/adminHeader.ejs %>
+<div class="col-lg-10">
+    <% include messages.ejs %>
+    <div class="col-lg-10">
+        <div class="content-area">
+            <h3>FAQ</h3>
+            <div class="header_wrap">
+                <div class="num_rows">
+
+                    <div class="row show_number_ofPages form-group">
+                        <label>
+                            Show Numbers Of Rows
+                        </label>
+                        <div class="form-group col-lg-5">
+                            <!--		Show Numbers Of Rows 		-->
+                            <select class="form-control" name="state" id="maxRows">
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="70">70</option>
+                                <option value="100">100</option>
+                                <option value="5000">Show ALL Rows</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table admin_Manage_Table" id="admin_Management_Table">
+                <thead>
+                    <tr>
+                        <th>Sr.No#</th>
+                        <th>ID</th>
+                        <th>Author Name</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <!-- Button trigger modal -->
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td><img src="/pic/amazon.jpg" alt="Blog Image" width="75px" height="65px"></td>
+                        <td> <a role="button" data-toggle="modal" data-target="#new_blog_model"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!--		Start Pagination -->
+            <div class='pagination-container'>
+                <nav>
+                    <ul class="pagination">
+                        <!--	Here the JS Function Will Add the Rows -->
+                    </ul>
+                </nav>
+            </div>
+            <div class="rows_count">Showing 11 to 20 of 91 entries</div>
+
+
+            <!-- Modal -->
+            <div class="modal fade new_blog_model" id="new_blog_model" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Manage Blog</h5>
+                        </div>
+                        <div class="modal-body modalBody" id="modalBody">
+
+                            <div class="col-lg-8" id="blog_image_path">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="id">ID</label>
+                                <input type="text" class="form-control" id="blog_id" placeholder="ex:10001" disabled>
+                                <label for="Name">Arthur Name</label>
+                                <input type="text" class="form-control" id="blog_author_name" placeholder="Saad Sohail">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="contact">Blog Title</label>
+                                <input type="text" class="form-control" id="blog_title" placeholder="0300-0000000">
+                                <label for="contact">Description</label>
+                                <input type="text" class="form-control" placeholder="31300-00211111-0"
+                                    id="blog_description">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="contact">Select Image</label>
+                                <input type="file" class="form-control" name="blog_image_path" id="blog_image_path">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="contact">Blog Content </label>
+                                <textarea name="new_blog_content" id="new_blog_content" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="col-lg-12">
+                                <a role="button" class="btn btn-default" data-dismiss="modal">Close</a>
+                                <a role="submit" class="btn btn-danger" name="delete" value="dddddd">Delete</a>
+                                <a role="submit" class="btn btn-primary" name="save">Save </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- header k ending point ha container, row and col-lg-12 wala  -->
+        </div>
+    </div>
+
+
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('new_blog_content')
+
+
+
+        var table = document.getElementById("admin_Management_Table")
+        var new_blog_content = document.getElementById('new_blog_content')
+        for (var i = 1; i < table.rows.length; i++) {
+            table.rows[i].querySelector('a').onclick = function () {
+
+                document.getElementById('blog_id').value = this.closest('tr').cells[1].innerHTML
+                document.getElementById('blog_author_name').value = this.closest('tr').cells[2].innerHTML
+                document.getElementById('blog_title').value = this.closest('tr').cells[3].innerHTML
+                document.getElementById('blog_description').value = this.closest('tr').cells[4].innerHTML
+                document.getElementById('blog_image_path').innerHTML = this.closest('tr').cells[5].innerHTML
+
+                //  setting the data to the textarea CKEDITOR 
+                CKEDITOR.instances.new_blog_content.setData(this.closest('tr').cells[4].innerHTML)
+            };
+        }
+
+
+
+    </script>
+
+
+    <script src="/js/jQuery Files/jquery-3.5.1.js"></script>
+    <script src="/js/jQuery Files/jquery-3.5.1.min.js"></script>
+    <script src="/js/tablePagination.js"></script>

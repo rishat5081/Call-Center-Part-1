@@ -1,0 +1,209 @@
+<%include  Web_Template_Pages/userProfile_headers.ejs%>
+
+
+
+<div class="col-sm-6">
+  <div id="weatherDIV">
+    <img src="" id="image" height="200px" width="200px" style="border: solid; margin-top: 1%;">
+    <div class="temp">
+      <h4 id='userLocation' class="location"></h4>
+      <h4 id='temperature' class="temperature"></h4>
+      <h4 id='sky' class="sky"></h4>
+    </div>
+
+
+
+  </div>
+</div>
+<div class="col-sm-6">
+  <canvas id="canvas" width="192" height="192" class="clockCanvas">
+  </canvas>
+</div>
+</div>
+
+</div>
+<script>
+  var skySituation = document.getElementById("sky"),
+    temperature = document.getElementById("temperature"),
+    userLocation = document.getElementById("userLocation");
+
+
+  getLocation()
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    loadXMLDoc(position.coords.latitude, position.coords.longitude)
+  }
+
+
+  function loadXMLDoc(latitude, longitude) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=3a6b5a2b5564b6dded6b632191fa149f`
+    // const url = 'https://api.openweathermap.org/data/2.5/weather?lat=64.426594&lon=-153.375942&appid=3a6b5a2b5564b6dded6b632191fa149f'
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+
+        //getting the weather situation according to the API response 
+        const weather = JSON.parse(this.responseText)
+        //All details of the response of the API is in the Details
+        // Details.innerHTML = JSON.stringify(weather)
+        console.log(JSON.stringify(weather))
+        skySituation.innerHTML = weather.weather[0].main
+        userLocation.innerHTML = weather.name
+        temperature.innerHTML = (weather.main.temp - 273.15).toFixed(2) + '&#8451;'
+        console.log(weather.main.temp)
+        //getting the icons related to the weather
+        switch (weather.weather[0].main) {
+          case 'Clouds':
+            document.getElementById("image").src = 'pic/weather icons/clouds.png'
+            break;
+          case 'Sun':
+            document.getElementById("image").src = 'pic/weather icons/sun.jpg'
+            break;
+          case 'Clear':
+            document.getElementById("image").src = 'pic/weather icons/sun.jpg'
+            break;
+          case 'Rain':
+            document.getElementById("image").src = 'pic/weather icons/rain.png'
+            break;
+          case 'Haze':
+            document.getElementById("image").src = 'pic/weather icons/haze.png'
+            break;
+          case 'Heavy Rain':
+            document.getElementById("image").src = 'pic/weather icons/rain.png'
+            break;
+          case 'ThunderStorm':
+            document.getElementById("image").src = 'pic/weather icons/thunderstorm.png'
+            break;
+          case 'Snow':
+            document.getElementById("image").src = 'pic/weather icons/snow.png'
+            break;
+          case 'Partly Sunny':
+            document.getElementById("image").src = 'pic/weather icons/partly sunny.png'
+            break;
+          case 'Partly Snow':
+            document.getElementById("image").src = 'pic/weather icons/partly snow.jpg'
+            break;
+          case 'Partly Rain':
+            document.getElementById("image").src = 'pic/weather icons/partly rain.png'
+            break;
+          case 'Smoke':
+            document.getElementById("image").src = 'pic/weather icons/smoke.png'
+            break;
+          case 'Mist':
+            document.getElementById("image").src = 'pic/weather icons/mist.png'
+            break;
+
+          default:
+            document.getElementById("image").src = 'pic/weather icons/no image.png'
+            break;
+        }
+
+        /*================================== Images from API ==================================*/
+        // this is an api for the openweather which also provide the icons for the weather by using this link you can read furthur
+        // https://openweathermap.org/weather-conditions
+        // document.getElementById('image').src = 'http://openweathermap.org/img/wn/01n@2x.png'
+
+      }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+  }
+
+
+  /*================================== Clock ==================================*/
+  /*================================== DONT TOUCH IT ==================================*/
+
+
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  var radius = canvas.height / 2;
+  ctx.translate(radius, radius);
+  radius = radius * 0.90
+  setInterval(drawClock, 1000);
+
+  function drawClock() {
+    drawFace(ctx, radius);
+    drawNumbers(ctx, radius);
+    drawTime(ctx, radius);
+  }
+
+  function drawFace(ctx, radius) {
+    var grad;
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+    grad.addColorStop(0, '#292B2C');
+    grad.addColorStop(0.5, 'grey');
+    grad.addColorStop(1, '#292B2C');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = radius * 0.1;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+    ctx.fillStyle = '#292B2C';
+    ctx.fill();
+  }
+
+  function drawNumbers(ctx, radius) {
+    var ang;
+    var num;
+    ctx.font = radius * 0.15 + "px arial";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    for (num = 1; num < 13; num++) {
+      ang = num * Math.PI / 6;
+      ctx.rotate(ang);
+      ctx.translate(0, -radius * 0.85);
+      ctx.rotate(-ang);
+      ctx.fillText(num.toString(), 0, 0);
+      ctx.rotate(ang);
+      ctx.translate(0, radius * 0.85);
+      ctx.rotate(-ang);
+    }
+  }
+
+  function drawTime(ctx, radius) {
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour = hour % 12;
+    hour = (hour * Math.PI / 6) +
+      (minute * Math.PI / (6 * 60)) +
+      (second * Math.PI / (360 * 60));
+    drawHand(ctx, hour, radius * 0.5, radius * 0.07);
+    //minute
+    minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+    drawHand(ctx, minute, radius * 0.8, radius * 0.07);
+    // second
+    second = (second * Math.PI / 30);
+    drawHand(ctx, second, radius * 0.9, radius * 0.02);
+  }
+
+  function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0, 0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+  }
+
+
+
+
+</script>
+
+<% include  Web_Template_Pages/footer.ejs %>

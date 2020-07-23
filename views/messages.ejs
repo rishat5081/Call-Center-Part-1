@@ -1,0 +1,11 @@
+<%if(messages){ %>
+<% for(const type in messages){%>
+<ul class="alert alert-<%= type %>">
+    <li><%= messages[type] %></li>
+    <%} %>
+</ul>
+<%}else { %>
+<div class="alert alert-dark" role="alert">
+    This is a dark alert—check it out!
+</div>
+<%}%>

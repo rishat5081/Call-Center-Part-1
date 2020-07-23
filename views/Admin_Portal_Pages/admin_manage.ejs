@@ -1,0 +1,1247 @@
+<% include Admin_Templates_Pages/adminHeader.ejs %>
+<div class="col-lg-10">
+
+    <div class="col-lg-10">
+        <% include messages.ejs %>
+    </div>
+    <div class="content-area">
+
+        <div class="col-lg-10  admin-manage-heading">
+            <h3>Admin Management</h3>
+            <a role="button" class="btn" id="add_Permission_Btn" data-toggle="modal" data-target="#settingModal"
+                onclick="emptyField()">Add Admin</a>
+
+
+
+            <div class="row show_number_ofPages form-group">
+                <label>
+                    Show Numbers Of Rows
+                </label>
+                <div class="form-group col-lg-5">
+                    <!--		Show Numbers Of Rows 		-->
+                    <select class="form-control" name="state" id="maxRows">
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="70">70</option>
+                        <option value="100">100</option>
+                        <option value="5000">Show ALL Rows</option>
+                    </select>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-10">
+            <table class="table admin_Manage_Table" id="admin_Management_Table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Admin Type</th>
+                        <th>Contact Number</th>
+                        <th>CNIC</th>
+                        <th>Gender</th>
+                        <th>Added By</th>
+                        <th>Admin Since</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <!-- Button trigger modal -->
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td>Super</td>
+                        <td>0345-5536125</td>
+                        <td>0345-5536125</td>
+                        <td>Male</td>
+                        <td>Me</td>
+                        <td>03-05-2022</td>
+                        <td> <a role="button" data-toggle="modal" data-target="#settingModal"> <img
+                                    src="/pic/setting.png" height="15px" width="15px">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade settingModal" id="settingModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Manage Admin</h5>
+            </div>
+            <div class="modal-body modalBody" id="modalBody">
+                <div class="col-lg-6">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="admin_ID" placeholder="ex:10001" disabled>
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" placeholder="Saad Sohail" id="admin_Name">
+                </div>
+                <div class="col-lg-6">
+                    <label for="contact">Contact</label>
+                    <input type="text" class="form-control" placeholder="0300-0000000" id="admin_Contact">
+                    <label for="contact">CNIC</label>
+                    <input type="text" class="form-control" placeholder="31300-00211111-0" id="admin_CNIC">
+                </div>
+                <div class="col-lg-6">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" id="admin_Email" placeholder="saad@gmail.com">
+                    <label for="Type">Type</label>
+                    <input type="text" class="form-control" placeholder="Admin" id="admin_Type">
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="contact">Gender</label>
+                    <input type="text" class="form-control" placeholder="Male/Female" id="admin_Gender">
+                    <label for="contact">Added By</label>
+                    <input type="text" class="form-control" placeholder="Super Admin" id="admin_Added">
+                </div>
+                <div class="col-lg-6">
+                    <label for="contact">Admin Since</label>
+                    <input type="text" class="form-control" placeholder="Enter email" id="admin_Added_Since">
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="col-lg-12">
+                    <a role="button" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a role="submit" class="btn btn-danger" name="delete" value="dddddd">Delete</a>
+                    <a role="submit" class="btn btn-primary" name="save">Save </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--		Start Pagination -->
+<div class='pagination-container'>
+    <nav>
+        <ul class="pagination">
+            <!--	Here the JS Function Will Add the Rows -->
+        </ul>
+    </nav>
+</div>
+<div class="rows_count">Showing 11 to 20 of 91 entries</div>
+
+
+
+
+<!-- header k ending point ha container, row and col-lg-12 wala  -->
+</div>
+</div>
+<script>
+
+    var table = document.getElementById("admin_Management_Table")
+    function emptyField() {
+        document.getElementById('admin_ID').value = ''
+        document.getElementById('admin_Name').value = ''
+        document.getElementById('admin_Email').value = ''
+        document.getElementById('admin_Type').value = ''
+        document.getElementById('admin_Contact').value = ''
+        document.getElementById('admin_CNIC').value = ''
+        document.getElementById('admin_Gender').value = ''
+        document.getElementById('admin_Added').value = ''
+        document.getElementById('admin_Added_Since').value = ''
+    }
+    for (var i = 1; i < table.rows.length; i++) {
+        table.rows[i].querySelector('a').onclick = function () {
+
+            document.getElementById('admin_ID').value = this.closest('tr').cells[1].innerHTML
+            document.getElementById('admin_Name').value = this.closest('tr').cells[2].innerHTML
+            document.getElementById('admin_Email').value = this.closest('tr').cells[3].innerHTML
+            document.getElementById('admin_Type').value = this.closest('tr').cells[4].innerHTML
+            document.getElementById('admin_Contact').value = this.closest('tr').cells[5].innerHTML
+            document.getElementById('admin_CNIC').value = this.closest('tr').cells[6].innerHTML
+            document.getElementById('admin_Gender').value = this.closest('tr').cells[7].innerHTML
+            document.getElementById('admin_Added').value = this.closest('tr').cells[8].innerHTML
+            document.getElementById('admin_Added_Since').value = this.closest('tr').cells[9].innerHTML
+        };
+    }
+</script>
+
+<script src="/js/jQuery Files/jquery-3.5.1.js"></script>
+<script src="/js/jQuery Files/jquery-3.5.1.min.js"></script>
+<script src="/js/tablePagination.js"></script>

@@ -1,0 +1,107 @@
+<%include  Web_Template_Pages/userProfile_headers.ejs%>
+<div class="col-lg-9">
+  <h4><%= typeof message != 'undefined' ? message : ''%></h4>
+  <form id="profile_submit_form" action="/updateUser_Priofile" method="POST">
+
+
+    <div class="col-sm-6">
+      <label class="user_frm_profile_labels">Username</label>
+      <input disabled id='userProfile_username' type="text" name="username" placeholder="User Name"
+        value="<%=username%>" style="opacity: 0.6;">
+    </div>
+
+    <div class="col-sm-6">
+      <label class="user_frm_profile_labels">Name</label>
+      <input disabled id='name' type="text" name="name" placeholder="Name" value="<%=name%>" style="opacity: 0.6;">
+    </div>
+
+    <div class="col-sm-6">
+      <label class="user_frm_profile_labels">Email</label>
+      <input disabled id='userProfile_email' type="email" name="userProfile_email" placeholder="Email"
+        value="<%=user_email%>" style="opacity: 0.6;">
+    </div>
+
+    <div class="col-sm-6">
+      <label class="user_frm_profile_labels">Country</label>
+      <input disabled id='userProfile_country' type="text" name="userProfile_country" placeholder="Country"
+        value="<%=user_Country%>" style="opacity: 0.6;">
+    </div>
+
+
+    <div class="col-sm-6">
+      <label class="user_frm_profile_labels">Select Country</label>
+      <%include  Web_Template_Pages/countries_list.ejs%>
+    </div>
+
+    <div class="col-sm-6">
+
+      <label class="user_frm_profile_labels">Contact No.</label>
+
+      <span id="userProfile_country_code_prefix" style="opacity: 0.6;"></span>
+
+      <!--ye error ai ga but dont worry this won't effect the program its is simply a EJS value from the node -->
+      <script> document.getElementById('userProfile_country_code_prefix').innerHTML = <%=user_phoneExtention %> 
+      </script>
+      <input disabled type="number" id='userProfile_phoneNumber' name="number" placeholder="Phone No"
+        value="<%=user_phoneNumber%>" style="opacity: 0.6;">
+    </div>
+
+    <div class="col-sm-6">
+      <label class="user_frm_profile_labels">City</label>
+      <input disabled id='userProfile_city' type="text" name="userProfile_city" placeholder="City"
+        value="<%=user_city%>" style="opacity: 0.6;">
+    </div>
+  </form>
+  <div class="col-lg-12">
+    <button id="edit_btn" onclick="makeEnable_Inputs()">Edit</button>
+  </div>
+
+  <div class="col-lg-12">
+    <button id="submit_Btn" disabled style="opacity: 0;" onclick="submit_form()"> Done</button>
+  </div>
+</div>
+<script>
+    function makeEnable_Inputs() {
+      document.getElementById('edit_btn').disabled = true
+      document.getElementById('edit_btn').style.opacity = 0
+      document.getElementById('submit_Btn').disabled = false
+      document.getElementById('submit_Btn').style.opacity = 1
+
+
+
+      document.getElementById('name').style.opacity = 1
+
+      document.getElementById('userProfile_city').style.opacity = 1
+
+      document.getElementById('userProfile_country').style.opacity = 1
+      document.getElementById('userProfile_country_code_prefix').style.opacity = 1
+      document.getElementById('userProfile_phoneNumber').style.opacity = 1
+      document.getElementById('userProfile_city').style.opacity = 1
+      document.getElementById('country_drop_down_list').style.opacity = 1
+
+      document.getElementById('name').disabled = false
+
+      document.getElementById('userProfile_city').disabled = false
+
+      document.getElementById('userProfile_country').disabled = false
+      document.getElementById('userProfile_country_code_prefix').disabled = false
+      document.getElementById('userProfile_phoneNumber').disabled = false
+      document.getElementById('userProfile_city').disabled = false
+      document.getElementById('country_drop_down_list').disabled = false
+
+
+
+
+
+
+    }
+  function submit_form() {
+    document.getElementById('profile_submit_form').submit()
+    document.getElementById('edit_btn').style.opacity = 1
+    document.getElementById('submit_Btn').disabled = true
+    document.getElementById('submit_Btn').style.opacity = 0
+  }
+</script>
+</div>
+</div>
+<% include  Web_Template_Pages/footer.ejs %>

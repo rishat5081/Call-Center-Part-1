@@ -1,0 +1,48 @@
+<title>Extension</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+<%include  Web_Template_Pages/userProfile_headers.ejs%>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h2>Your Extention: <%=user_extention%> </h2>
+  </div>
+  <div class="col-sm-2">
+    <!-- Button trigger modal -->
+    <button id='manage_extention_btn' data-toggle="modal" data-target="#myModal">Manage Extension</button>
+  </div>
+  <div class="col-sm-4">
+
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Manage Extension</h5>
+      </div>
+      <div class="modal-body">
+        <label>Add an Extension</label>
+        <input type="text" name="adduser_extention" id="">
+      </div>
+
+      <div class="modal-footer btn-group" role="group">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<% include  Web_Template_Pages/footer.ejs %>

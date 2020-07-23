@@ -1,0 +1,116 @@
+<section class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+
+        <!-- this is done for the when the user is logged in then 
+          it will display profile and logout button
+          and all the remaining home page will be same
+          but if the user is not logged in 
+          and user clicks the voip image then it redirect
+          to the home with the login, signup button navigation bar -->
+
+
+        <!--    And the user is logged in is detected by 
+          EJS_routes.js file there is a the method logged_In
+          there is the req.session.passport.user sends the res.locals.user 
+          the ejs file a value is detect by using simpel '"user"' variable  as stated in the below in -->
+
+
+        <div class="btns">
+          <ul>
+            <a href="/logout">
+              <li class="last-child"><i class="fa fa-credit-card" aria-hidden="true"></i>Log Out</li>
+            </a>
+
+            <a href="/user_profile">
+              <li class="last-child"><i class="fa fa-user-circle" aria-hidden="true"></i>My Profile</li>
+            </a>
+            <li class="last-child drp"><a><i class="fa fa-cart-plus" aria-hidden="true"></i> </a>
+
+              <div class="drp-menu">
+                <div class="mnu-bg">
+                  <div class="crt-nmbr">
+                    <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+                  </div>
+
+                  <div class="shopping-cart-total">
+                    <span class="lighter-text">Total:</span>
+                    <span class="main-color-text">$2,229.97</span>
+                  </div>
+                </div>
+                <!--end shopping-cart-header -->
+
+                <ul class="cart">
+                  <li>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+                    <span>KS Automatic Mechanic...</span>
+
+                    <input type="text" name="" id="" value="5">
+                  </li>
+
+                  <li>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+                    <span>KS AutomatKS Automatic Mechanic...ic Mechanic...</span>
+
+                    <input type="text" name="" id="" value="5">
+                  </li>
+
+                  <li>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
+                    <span>Kindle, 6" Glare-Free To...</span>
+
+                    <input type="text" name="" id="" value="5">
+                  </li>
+                  <li>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+                    <span>KS Automatic Mechanic...</span>
+
+                    <input type="text" name="" id="" value="5">
+                  </li>
+
+                  <li>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
+                    <span>KS AutomatKS Automatic Mechanic...ic Mechanic...</span>
+
+                    <input type="text" name="" id="" value="5">
+                  </li>
+
+                  <li>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />
+                    <span>Kindle, 6" Glare-Free To...</span>
+
+                    <input type="text" name="" id="" value="5">
+                  </li>
+                </ul>
+
+                <div class="cart-footer">
+                  <a href="/logout">
+                    <i class="fa fa-credit-card" aria-hidden="true"></i>Check Out
+                  </a>
+                </div>
+                
+              </div>
+              <!--end shopping-cart -->
+
+
+
+        </div>
+        </li>
+
+
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+<!-- <ul class="drp-menu">
+  <li><a href="">22</a></li>
+  <li><a href="">22</a></li>
+</ul> -->

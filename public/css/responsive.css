@@ -1,0 +1,747 @@
+@media (min-width:1326px){
+	#SUBMIT {
+    width: 34% !important;
+    margin-left: 30px !important;
+    margin-top: 11px !important;
+}
+
+}
+@media (min-width:1024px) {
+	.container{
+		width: 970px !important;
+	}
+  .logo img{
+		margin-left: -6px !important;
+		margin-top: 2px;
+	}
+	.header{
+		width: 100%;
+	}
+	.sticky{
+	   width: 100% !important;
+	
+	}
+  .header ul{
+  	margin-left: -31px;
+  }
+  .form{
+    margin-left: -32px;
+    margin-right: -32px;
+    width: auto;
+
+  }
+  .form h1{
+  	width: 59%;
+  }
+  .form p{
+  	    width: 44%;
+  }
+	#phone {
+    width: 340px!important;
+	}
+   .bannersec input{
+   	width: 34%;
+   }
+   #SUBMIT{
+    width: 34%;
+    margin-left: -392px;
+    margin-top: 31px;
+   }
+   .hero-sec h1{
+   	margin-left: 36%;
+   }
+   .features .computer img{
+   	width: 311px;
+   }
+   .posts .posts-images-1{
+   	margin-left: 15px;
+   	width: 30%;
+   	margin-bottom: 48px;
+   }
+   .posts #btn{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+   }
+   .text{
+   	width: 292px;
+   }
+   .latest-posts{
+   	width: 292px;
+   }
+   .packages .types{
+    width: 31%;
+    margin-left: 14px;
+   }
+   .packages .types li{
+   	font-size: 10px;
+   }
+  .posts .posts-images{
+    margin-right: 1px;
+    margin-left: 19px;
+    display: block;
+    width: 30%;
+  }
+  .posts li {
+    margin-left: 0px;
+    width: 114px;
+  }
+  .text .arrow{
+  	margin-left: 99px;
+}
+.cards ul{
+	display: inherit;
+	margin-right: 0;
+}
+.add{
+	text-align: inherit;
+	height: inherit;
+}
+.cards li {
+	display: inline-block;
+	float: left;
+}
+.steps{
+    height: 120px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.work h2{
+	margin-top: 60px;
+}
+.work h2:before {
+    width: 46%;
+    height: 98px;
+    left: 57px;
+    top: -34px;
+}
+.hero-sec .column{
+	    margin-left: 11px;
+}
+
+.center blockquote{
+	line-height:inherit;
+	padding: 5px;
+}
+.work #btn{
+	margin-top: 40px;
+}
+.features ul{
+	margin-top: 30px;
+}
+
+
+}
+
+@media (max-width:768px) {
+  
+.container{
+		width: 390px;
+	}
+	.top-logo{
+		margin-left: 0px;
+	}
+  .logo img{
+		margin-left: 0px;
+		margin-top: -8px;
+	}
+	.header{
+		width: 100%;
+	}
+	.sticky{
+	   width: 100% !important;
+	
+	}
+  .header ul{
+  	margin-left: -31px;
+  }
+  .form{
+    margin-left: -32px;
+    margin-right: -32px;
+    width: auto;
+
+  }
+  .form h1{
+  	width: 66%;
+  }
+  .form p{
+  	    width: 58%;
+  }
+	#phone {
+    width: 345px!important;
+	}
+   .bannersec input{
+   	width: 44%;
+   }
+   #SUBMIT{
+   	width: 44%;
+   }
+   .hero-sec h1{
+   	margin-left: 31%;
+   }
+   .features .computer img{
+   	width: 311px;
+   }
+   .posts .posts-images-1{
+   	margin-left: 41px;
+   	width: 37%;
+   	margin-bottom: 0px;
+   }
+   .posts #btn{
+   	margin-top: 42px;
+    display: inline-block;
+    margin-left: 106px;
+   }
+   .text{
+   	width: 292px;
+   }
+   .latest-posts{
+   	width: 292px;
+   }
+   .packages .types{
+    width: 31%;
+    margin-left: 14px;
+   }
+   .packages .types li{
+   	font-size: 10px;
+   }
+  .posts .posts-images{
+  	margin-right: 29px;
+    margin-left: 41px;
+    display: block;
+    width: 38%;
+  }
+  .posts li {
+    margin-left: 0px;
+    width: 114px;
+  }
+  .text .arrow{
+  	margin-left: 99px;
+}
+.cards ul{
+	display: inherit;
+	margin-right: 0;
+}
+.add{
+	text-align: inherit;
+	height: inherit;
+}
+.cards li {
+	display: inline-block;
+	float: left;
+}
+.steps{
+    height: 120px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.work h2{
+	margin-top: 60px;
+}
+.work h2:before {
+    width: 29%;
+    height: 98px;
+    left: 120px;
+    top: -34px;
+}
+.hero-sec .column{
+	    margin-left: 21px;
+}
+.wrapper{
+	width: 99%;
+	margin-left: 8px;
+}
+.center blockquote{
+	line-height:inherit;
+	padding: 5px;
+}
+.work #btn{
+	margin-top: 40px;
+}
+.features ul{
+	margin-top: 30px;
+}
+.login100-pic img{
+    max-width: 250px;
+    margin-top: -80px;
+    margin-left: 181px;
+}
+.detail{
+	margin-top: 40px;
+}
+form .label{
+	margin-top: 12px;
+}
+.col-md-10 input{
+	margin-top: 8px;
+	width: 100%;
+}
+.Upload{
+	margin-top: 48px !important;
+}
+.Contact{
+	margin-top: 16px !important;
+}
+.Contact input{
+	width: 75%;
+	    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.Contact textarea{
+	width: 75%;
+	    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.Center{
+	margin-left: 87px;
+}
+
+  
+}
+
+@media (max-width:425px) {
+  
+	.container{
+		width: 390px;
+	}
+	.top-logo{
+		margin-left: 0px;
+	}
+  .logo img{
+		margin-left: 0px;
+		margin-top: -8px;
+	}
+	.header{
+		width: 100%;
+	}
+	.sticky{
+	   width: 100% !important;
+	
+	}
+  .header ul{
+  	margin-left: -31px;
+  }
+  .form{
+    margin-left: -32px;
+    margin-right: -32px;
+    width: auto;
+
+  }
+  .form h1{
+  	width: 100%;
+  }
+	#phone {
+    width: 347px!important;
+	}
+   .bannersec input{
+   	width: 82%;
+   }
+   #SUBMIT{
+   	width: 82%;
+   }
+   .hero-sec h1{
+   	margin-left: 13%;
+   }
+   .features .computer img{
+   	width: 311px;
+   }
+   .posts .posts-images-1{
+   	margin-left: 34px;
+   	width: 80%;
+   	margin-bottom: 0px;
+   }
+   .posts #btn{
+   	margin-top: 42px;
+    display: inline-block;
+    margin-left: 106px;
+   }
+   .text{
+   	width: 292px;
+   }
+   .latest-posts{
+   	width: 292px;
+   }
+   .packages .types{
+    width: 92%;
+    margin-left: 14px;
+   }
+  .posts .posts-images{
+
+    margin-left: 34px;
+    display: block;
+    width: 80%;
+  }
+  .posts li {
+    margin-left: 0px;
+    width: 114px;
+  }
+  .text .arrow{
+  	margin-left: 99px;
+}
+.cards ul{
+	display: inherit;
+	margin-right: 0;
+}
+.add{
+	text-align: inherit;
+	height: inherit;
+}
+.cards li {
+	display: inline-block;
+	float: left;
+}
+.steps{
+    height: 120px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.work h2{
+	margin-top: 60px;
+}
+.work h2:before {
+    width: 60%;
+    height: 97px;
+    left: 31px;
+    top: -34px;
+}
+.hero-sec .column{
+	    margin-left: 90px;
+}
+.wrapper{
+	width: 95%;
+	margin-left: 8px;
+}
+.center blockquote{
+	line-height:inherit;
+	padding: 5px;
+}
+.work #btn{
+	margin-top: 40px;
+}
+.features ul{
+	margin-top: 30px;
+}
+.login100-pic img{
+	    max-width: 204px;
+    margin-top: -80px;
+    margin-left: 95px;
+}
+.detail{
+	margin-top: 40px;
+}
+form .label{
+	margin-top: 12px;
+}
+.col-md-10 input{
+	margin-top: 8px;
+	width: 100%;
+}
+.Contact{
+	margin-top: 16px !important;
+}
+.Contact input{
+	width: 100%;
+}
+.Contact textarea{
+	width: 100%;
+}
+.Center{
+	margin-left: 0px;
+}
+  
+}
+@media (max-width:375px) {
+	.container{
+		width: 340px;
+	}
+	.top-logo{
+		margin-left: 0px;
+	}
+  .logo img{
+		margin-left: 0px;
+		margin-top: -8px;
+	}
+	.header{
+		width: 100%;
+	}
+	.sticky{
+	   width: 100% !important;
+	
+	}
+  .header ul{
+  	margin-left: -31px;
+  }
+  .form{
+    margin-left: -32px;
+    margin-right: -32px;
+    width: auto;
+
+  }
+	#phone {
+    width: 308px!important;
+	}
+   .bannersec input{
+   	width: 82%;
+   }
+   #SUBMIT{
+   	width: 82%;
+   }
+   .hero-sec h1{
+   	margin-left: 11%;
+   }
+   .features .computer img{
+   	width: 311px;
+   }
+   .posts .posts-images-1{
+   	margin-left: 8px;
+   	width: 100%;
+   	margin-bottom: 0px;
+   }
+   .posts #btn{
+   	margin-top: 42px;
+    display: inline-block;
+    margin-left: 82px;
+   }
+   .text{
+   	width: 292px;
+   }
+   .latest-posts{
+   	width: 292px;
+   }
+   .packages .types{
+    width: 92%;
+    margin-left: 14px;
+   }
+  .posts .posts-images{
+
+    margin-left: 8px;
+    display: block;
+    width: 100%;
+  }
+  .posts li {
+    margin-left: 0px;
+    width: 114px;
+  }
+  .text .arrow{
+  	margin-left: 99px;
+}
+.cards ul{
+	display: inherit;
+	margin-right: 0;
+}
+.add{
+	text-align: inherit;
+	height: inherit;
+}
+.cards li {
+	display: inline-block;
+	float: left;
+}
+.steps{
+    height: 120px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.work h2{
+	margin-top: 60px;
+}
+.work h2:before {
+    width: 62%;
+    height: 85px;
+    left: 27px;
+    top: -27px;
+}
+.hero-sec .column{
+	    margin-left: 58px;
+}
+.wrapper{
+	width: 95%;
+	margin-left: 8px;
+}
+.center blockquote{
+	line-height:inherit;
+	padding: 5px;
+}
+.work #btn{
+	margin-top: 40px;
+}
+.features ul{
+	margin-top: 30px;
+}
+.login100-pic img{
+	    max-width: 204px;
+    margin-top: -80px;
+    margin-left: 69px;
+}
+.detail{
+	margin-top: 40px;
+}
+form .label{
+	margin-top: 12px;
+}
+.col-md-10 input{
+	margin-top: 8px;
+	width: 100%;
+}
+.Contact{
+	margin-top: 16px !important;
+}
+.Contact input{
+	width: 100%;
+}
+.Contact textarea{
+	width: 100%;
+}
+.Center{
+	margin-left: 0px;
+}
+  
+}
+
+@media (max-width:320px) {
+	.container{
+		width: 304px;
+	}
+	.top-logo{
+		margin-left: 0px;
+	}
+	.logo img{
+		margin-left: 0px;
+		margin-top: -8px;
+	}
+	#navbar{
+		width: 100% !important;
+	}
+	.sticky{
+		    width: 95.5% !important;
+	}
+  .header ul{
+  	margin-left: -31px;
+  }
+  .form{
+    margin-left: -23px;
+    margin-right: -23px;
+    width: auto;
+
+  }
+  #phone {
+   	    width: 262px!important;
+   }
+   .bannersec input{
+   	width: 82%;
+   }
+   #SUBMIT{
+   	width: 82%;
+   }
+   .hero-sec h1{
+   	margin-left: 7%;
+   }
+   .features .computer img{
+   	width: 311px;
+   }
+   .posts .posts-images-1{
+   	margin-left: -9px;
+   	width: 100%;
+   	margin-bottom: 0px;
+   }
+   .posts #btn{
+   	margin-top: 42px;
+    display: inline-block;
+    margin-left: 70px;
+   }
+   .text{
+   	width: 292px;
+   }
+   .latest-posts{
+   	width: 292px;
+   }
+   .packages .types{
+    width: 92%;
+    margin-left: 14px;
+   }
+  .posts .posts-images{
+    margin-right: auto;
+    margin-left: -9px;
+    display: block;
+    width: 100%;
+  }
+  .posts li {
+    margin-left: 0px;
+    width: 114px;
+  }
+  .text .arrow{
+  	margin-left: 99px;
+}
+.cards ul{
+	display: inherit;
+	margin-right: 0;
+}
+.add{
+	text-align: inherit;
+	height: inherit;
+}
+.cards li {
+	display: inline-block;
+	float: left;
+}
+.steps{
+    height: 120px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.work h2{
+	margin-top: 60px;
+}
+.work h2:before{
+    width: 69%;
+    height: 85px;
+    left: 20px;
+    top: -30px;
+}
+.wrapper{
+	width: 95%;
+	margin-left: 8px;
+}
+.center blockquote{
+	line-height:inherit;
+	padding: 5px;
+}
+.work #btn{
+	margin-top: 40px;
+}
+.features ul{
+	margin-top: 30px;
+}
+.login100-pic img{
+	    max-width: 204px;
+    margin-top: -80px;
+    margin-left: 44px;
+}
+.wrap-login100{
+	margin-left: 14px;
+}
+.detail{
+	margin-top: 40px;
+}
+form .label{
+	margin-top: 12px;
+}
+.col-md-10 input{
+	margin-top: 8px;
+	width: 100%;
+}
+.Contact{
+	margin-top: 16px !important;
+}
+.Contact input{
+	width: 100%;
+}
+.Contact textarea{
+	width: 100%;
+}
+.Center{
+	margin-left: 0px;
+}
+}

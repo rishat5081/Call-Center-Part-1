@@ -1,0 +1,177 @@
+<% include Web_Template_Pages/header.ejs %>
+
+<div class="content">
+  <section class="about">
+    <div class="container">
+      <div class="row">
+        <div class="heading" id="white">
+            <h2>About<span style="color: #279cd8;"> Us</span></h2>
+          </div>
+          <div class="abt-txt">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+      </div>
+    </div>
+  </section>
+  <section class="msn-vsn">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xs-12 col-sm-12">
+          <div class="mission">
+            <img src="pic/mission.png">
+            <div class="heading">
+            <h2>Our<span style="color: #279cd8;"> Mission</span></h2>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xs-12 col-sm-12">
+          <div class="vision">
+            <img src="pic/vision.png">
+            <div class="heading">
+            <h2>Our<span style="color: #279cd8;"> Vision</span></h2>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="experience">
+    <div class="container">
+      <div class="row">
+        <div class="heading">
+            <h2>Our<span style="color: #279cd8;"> Experience</span></h2>
+          </div>
+          <div class="col-md-6 col-xs-12 col-sm-12">
+            <div class="image">
+              <img src="pic/voip.png" width="100%">
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12 col-sm-12">
+          <h4>Working Together <br><span> We Achieve More </span></h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          </div>
+      </div>
+    </div>
+  </section>
+  <section class="newletter">
+    <div class="container">
+      <div class="row">
+        <div class="news-box">
+          <h3>SIGN UP TO NEWSLETTER</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+          <div class="sbscrb-frm">
+            <form>
+              <input type="text" name="email" placeholder="Enter Your Email">
+              <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send Email</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <% include Web_Template_Pages/footer.ejs %>
+
+
+  </div>
+  <script type="text/javascript">
+      (function($) {
+        $.fn.menumaker = function(options) {  
+         var cssmenu = $(this), settings = $.extend({
+           format: "dropdown",
+           sticky: false
+         }, options);
+         return this.each(function() {
+           $(this).find(".button").on('click', function(){
+             $(this).toggleClass('menu-opened');
+             var mainmenu = $(this).next('ul');
+             if (mainmenu.hasClass('open')) { 
+               mainmenu.slideToggle().removeClass('open');
+             }
+             else {
+               mainmenu.slideToggle().addClass('open');
+               if (settings.format === "dropdown") {
+                 mainmenu.find('ul').show();
+               }
+             }
+           });
+           cssmenu.find('li ul').parent().addClass('has-sub');
+           multiTg = function() {
+             cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+             cssmenu.find('.submenu-button').on('click', function() {
+               $(this).toggleClass('submenu-opened');
+               if ($(this).siblings('ul').hasClass('open')) {
+                 $(this).siblings('ul').removeClass('open').slideToggle();
+               }
+               else {
+                 $(this).siblings('ul').addClass('open').slideToggle();
+               }
+             });
+           };
+           if (settings.format === 'multitoggle') multiTg();
+           else cssmenu.addClass('dropdown');
+           if (settings.sticky === true) cssmenu.css('position', 'fixed');
+           resizeFix = function() {
+            var mediasize = 1000;
+            if ($( window ).width() > mediasize) {
+             cssmenu.find('ul').show();
+           }
+           if ($(window).width() <= mediasize) {
+             cssmenu.find('ul').hide().removeClass('open');
+           }
+         };
+         resizeFix();
+         return $(window).on('resize', resizeFix);
+       });
+       };
+     })(jQuery);
+
+     (function($){
+      $(document).ready(function(){
+        $("#cssmenu").menumaker({
+         format: "multitoggle"
+       });
+      });
+    })(jQuery);
+
+  </script>
+</body>
+</html>

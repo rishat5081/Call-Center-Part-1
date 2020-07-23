@@ -1,0 +1,195 @@
+<% include Web_Template_Pages/header.ejs %>
+
+<div class="content">
+
+    <div class="container">
+
+
+        <div class="didPackages" style="margin-top: 10%;">
+            <div class="media-left">
+                <img src="" id="first_Image">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading" id="countryTitle"> </h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, illo quae dicta velit
+                    nesciunt blanditiis unde minus vitae non? Nulla ipsa suscipit voluptatem quibusdam
+                    distinctio quam quisquam aut eius modi!
+                </p>
+            </div>
+        </div>
+
+
+        <section>
+            <div class="col-lg-12">
+                <div class="customizeBtn">
+                    <button type="button" class="btn btn-secondary btn-lg" data-toggle="collapse"
+                        href="#multiCollapseExample1">Customize
+                        Package</button>
+                </div>
+            </div>
+            <div class="row">
+                <!-- <div class="col"> -->
+
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <!-- % if(user == 'not logged in'){ %>
+                        <div class="alert alert-danger" role="alert">
+                            You must log in first
+                        </div>
+                        % }else{ %> -->
+                    <div class="form-group customizePackage_Inputs">
+                        <div class="col-lg-6">
+
+                            <label class="form-group">DID</label>
+                            <input type="text" class="form-control" placeholder="Enter Number of DID">
+
+                            <label class="form-group">Add Channel</label>
+                            <input type="text" class="form-control" placeholder="Enter Number Channel">
+
+                            <label class="form-group">Special Number</label>
+                            <input type="text" class="form-control" placeholder="e.g 111,222">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label class="form-group">0900 series</label>
+                            <input type="text" class="form-control" placeholder="e.g 0900">
+
+                            <label class="form-group">0800 series</label>
+                            <input type="text" class="form-control" placeholder="e.g 0800">
+
+                        </div>
+                        <div class="col-lg-7">
+                            <button type="button" class="btn btn-default">Submit</button>
+                        </div>
+                        <!-- % } %> -->
+                        <!-- </div> -->
+                    </div>
+
+                </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Start of the thumbnail -->
+        <!-- Home And Corporate Pakages thumbnails -->
+        <section>
+            <div class="row">
+                <div class="col-sm-4 col-md-4">
+                    <div class="thumbnail">
+                        <h3 id="countryName">Home Package</h3>
+                        <ul class="list-group" id="noScroll">
+                            <li class="list-group-item">
+                                <span class="badge"> $ 14</span>
+                                Single DID With Default 5 Channel
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge"> $ 14</span>
+                                Add Channel
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4">
+                    <div class="thumbnail">
+                        <h3 id="countryName">Corporate Package</h3>
+                        <ul class="list-group" id="noScroll">
+                            <li class="list-group-item">
+                                <span class="badge"> $ 14</span>
+                                Single DID With Default 5 Channel
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge"> $ 14</span>
+                                Add Channel
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge"> $ 14</span>
+                                Corporate Special Number e.g 111,222
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge"> $ 14</span>
+                                0900 series
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge"> $ 14</span>
+                                0800 series
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+                <!-- start of the country flags thumbnail -->
+                <div class="col-sm-4 col-md-4">
+                    <div class="thumbnail">
+                        <h3>Select Your Country</h3>
+                        <ul class="list-group" id="Ul_id">
+
+                            <!-- setting the sqlResponse of the country name list from the database table  -->
+                            <%  sqlResponse.forEach((element)=>{ %>
+
+                            <li role="button" class="list-group-item" id="<%=element.All_country_name%>"
+                                onclick="getCountry(this.id)"> <img
+                                    src="/pic/country Flag/Flag_of_<%=element.All_country_name%>.png " height="20px"
+                                    width="20px">  <%=element.All_country_name%></li>
+                            <% }); %>
+
+                            <!-- end of the sql Response -->
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- end of the country flags thumbnail -->
+        </section>
+    </div>
+</div>
+
+
+<!-- https://www.fiverr.com/share/8xQPwp
+https://www.fiverr.com/share/2pzwb4
+https://www.fiverr.com/share/X0Zx4P
+https://www.fiverr.com/share/Dm1xpy -->
+
+
+
+
+
+
+
+<!-- js Files -->
+<script src="/js/jquery-3.5.1.js"></script>
+<!-- <script src="/public/js/jquery-3.5.1.min.js"></script> -->
+
+<script>
+    //getting the country data from the database by using the AJAX call and by using the flag div to trigger the AJAX
+    function getCountry(paramneter) {
+
+        $.ajax({
+            url: `/countryList/${paramneter}`,
+            type: "GET",
+            success: (result) => {
+                $("#countryTitle").html(result.countryPrice[0].All_country_name)
+                $("#first_Image").attr("src", `/pic/country Flag/Flag_of_${result.countryPrice[0].All_country_name}.png`)
+                //$("#second_Image").attr("src", `/pic/country Flag/Flag_of_${result.countryPrice[0].All_country_name}.png`)
+            }
+        })
+        console.log(paramneter);
+
+    }
+</script>
+<% include Web_Template_Pages/footer.ejs %>

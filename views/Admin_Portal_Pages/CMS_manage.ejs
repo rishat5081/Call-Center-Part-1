@@ -1,0 +1,85 @@
+<% include Admin_Templates_Pages/adminHeader.ejs %>
+<div class="col-lg-10">
+
+    <% include messages.ejs %>
+    <div class="content-area">
+        <h3>CMS Management</h3>
+    </div>
+
+    <div class="cms-form-heading col-lg-10">
+        <a role="button" class="btn" type="submit" data-toggle="modal" data-target="#newPage_Content">Add Page</a>
+        <h4>CMS Lists</h4>
+    </div>
+
+    <div class="cms-form">
+        <div class="col-lg-5">
+            <div class="input-group-prepend">
+                <h4 class="input-group-text" id="inputGroup-sizing-default">Title</h4>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="col-lg-5">
+            <div class="dropdown ">
+                <div class="input-group-prepend">
+                    <h4 class="input-group-text" id="inputGroup-sizing-default">Select the Title</h4>
+                </div>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option>Select Option</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-10 cms_page_content">
+        <h4>Content Of Page</h4><br>
+        <form action="/cms_page_content_form" method="post">
+            <textarea name="cms_page_content" cols="30" rows="20"></textarea>
+            <a role="button" class="btn" type="submit">Update</a>
+        </form>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade " id="newPage_Content" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Page Content</h5>
+                </div>
+                <div class="modal-body modalBody" id="modalBody">
+
+                    <label for="id">Page Name</label>
+                    <input type="text" class="form-control" id="admin_ID" placeholder="ex:10001">
+
+                    <label for="contact">Page Content</label>
+                    <textarea name="new_cms_page_content" cols="30" rows="20"></textarea>
+
+                </div>
+
+                <div class="modal-footer">
+                    <div class="col-lg-12">
+                        <a role="button" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <a role="submit" class="btn btn-danger" name="delete" value="dddddd">Delete</a>
+                        <a role="submit" class="btn btn-primary" name="save">Save </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<script src="/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('cms_page_content')
+    CKEDITOR.replace('new_cms_page_content')
+
+</script>

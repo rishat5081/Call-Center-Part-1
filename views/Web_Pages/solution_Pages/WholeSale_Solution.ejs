@@ -1,0 +1,102 @@
+<% include Web_Template_Pages/header.ejs %>
+
+
+<div class="container">
+    <div class="wholeSale_div">
+        <h2>Whole Sale Rate</h2>
+        <div class="col-lg-9">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, itaque beatae cum modi facere ab
+                architecto quas saepe iure pariatur veniam inventore deserunt blanditiis ipsa consectetur quam incidunt.
+                Quasi, iusto?</p>
+
+            <% if (user === "wholeSale_user") { %>
+
+
+            <div class="wholeSale_Contact_form col-lg-7 ">
+                <label for="wholeSale_Name">Name</label>
+                <input type="text" class="form-control" name="wholeSale_Name" placeholder="Enter Name">
+
+                <label for="wholeSale_Email">Email address</label>
+                <input type="email" class="form-control" name="wholeSale_Email" placeholder="Enter email">
+
+                <label for="companyName">Company Name</label>
+                <input type="text" class="form-control" name="companyName" placeholder="Enter Company Name">
+
+                <label for="companyCity">Company City</label>
+                <input type="text" class="form-control" name="companyCity" placeholder="Enter Company City">
+
+                <label for="contactNumber">Contact Number</label>
+                <input type="text" class="form-control" name="contactNumber" placeholder="Enter Contact">
+            
+                    <button type="button" class="btn">Submit</button>
+              
+            </div>
+            <% } else {  %>
+            <div class="alert alert-danger" role="alert">
+                You are not Loggin. Please Login !!!
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas sint id molestias beatae illo ipsum
+                magni in quis ratione dolore rerum fugiat dolorem, omnis obcaecati. Ipsum, molestias. Atque, debitis
+                assumenda?
+            </p>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getWholeSale_Rates(countryName) {
+        var tableBody = document.querySelector("#wholeSale_Rate_Table > tbody")
+        remove_TableBody(tableBody)
+        $.ajax({
+            url: `/wholesale_Rate/${countryName}`,
+            method: "GET",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'JSON',
+            error: (error => console.log('Error occur at ')),
+            success: ((AjaxResponse) => {
+                //checking if the response is null then it will print the coming soon
+                if (AjaxResponse.sqlResponse.length === 0) {
+                    console.log("adbasidvb")
+                    const coming = document.createElement('td')
+                    const Soon = document.createElement('td')
+                    const tr = document.createElement('tr')
+                    coming.innerText = "Coming"
+                    Soon.innerText = "Soon"
+                    tr.appendChild(coming)
+                    tr.appendChild(Soon)
+                    tableBody.appendChild(tr)
+                }
+                //printing all the routes and their rates to the table
+                else {
+                    AjaxResponse.sqlResponse.forEach(element => {
+                        const routeName_td = document.createElement('td')
+                        const rates_td = document.createElement('td')
+                        const tr = document.createElement('tr')
+                        //assigning the innertext to the newly created td and tr
+                        routeName_td.innerText = element.Route_VOIP
+                        rates_td.innerText = element.total
+                        //appending the td to the tr
+                        tr.appendChild(routeName_td)
+                        tr.appendChild(rates_td)
+                        //appending the tr to the table body 
+                        tableBody.appendChild(tr)
+
+                        console.log(element)
+                    })
+                }
+
+            })
+        })
+
+    }
+
+    function remove_TableBody(tableBody) {
+        while (tableBody.firstChild) {
+            tableBody.removeChild(tableBody.firstChild)
+        }
+    }
+</script>
+
+
+<% include Web_Template_Pages/footer.ejs %>

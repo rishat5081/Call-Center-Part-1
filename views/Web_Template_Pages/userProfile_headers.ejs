@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <script src="/js/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!-- navigation bar if the user is logged in will be included after this line -->
+
+  <%if(user =='not logged in' || user == 'undefined' ){%>
+  <%include  Web_Template_Pages/not_logged_in_navigation_bar.ejs %>
+  <%}else{%>
+  <%include  Web_Template_Pages/logged_in_navigation_Bar.ejs %>
+  <%}%>
+
+
+
+  <!--
+           this is done for the when the user is logged in then 
+          it will display profile and logout button
+          and all the remaining home page will be same
+          but if the user is not logged in 
+          and user clicks the voip image then it redirect
+          to the home with the login, signup button navigation bar --
+
+ 
+     And the user is logged in is detected by 
+          EJS_routes.js file there is a the method logged_In
+          there is the req.session.passport.user sends the res.locals.user 
+          the ejs file a value is detect by using simpel '"user"' variable  as stated in the below in --->
+  <section class="menu">
+    <div class="container">
+      <div class="row">
+        <div id="navbar">
+          <nav id='cssmenu'>
+            <a href="/">
+              <img src="pic/voip4.jpg" width="120px"> </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- %=userProfile_Pic %> -->
+
+  <div class="content">
+    <!-- <div class="container"> -->
+
+    <div class="row" style="margin-top: 4%;">
+
+
+      <div class="col-md-3">
+        <div class="sideBar left">
+          <div>
+
+            <% if(userProfile_Pic === 'undefined' ||userProfile_Pic === '' ){%>
+            <img src="pic/no-image.png" class="card-img-top" height="240" width="280">
+            <% }else  { %>
+            <img src="<%= userProfile_Pic%>" class="card-img-top" height="240" width="280" style="border: solid;">
+            <%}%>
+          </div>
+          <a href="/user_Dashboard"><button type="button" 
+                  class="button-user-profile btn-lg btn-block "> <img src="pic/icons/dashboard.png" alt="Dashboard" height="30px" width="30px">
+                  DashBoard</button></a>
+          <a href="/user_profile"><button type="button"
+                  class="button-user-profile btn-lg btn-block"> <img src="pic/icons/profile.png" alt="Profile" height="30px" width="30px">
+                  My Profile</button></a>
+          <a href="/user_extenstion"><button type="button"
+                  class="button-user-profile btn-lg btn-block"><img src="pic/icons/extension.png" alt="Extension" height="30px" width="30px">
+                  Extensions</button></a>
+                  <% if (user === 'rishat.5081@gmail.com') { %>
+            <a href="/user_vallet"><button type="button" class="button-user-profile btn-lg btn-block"> <img
+                  src="pic/icons/vallet.png" alt="My Vallet" height="30px" width="30px">
+                Testing</button></a>
+            <% } %>
+            <a href="/user_vallet"><button type="button" class="button-user-profile btn-lg btn-block"> <img
+                  src="pic/icons/vallet.png" alt="My Vallet" height="30px" width="30px">
+                My Vallet</button></a>
+            <a href="/user_usage"><button type="button" class="button-user-profile btn-lg btn-block"><img
+                  src="pic/icons/logs.png" alt="Call Logs" height="30px" width="30px">
+                Logs</button></a>
+            <a href="/user_helpdesk"><button type="button" class="button-user-profile btn-lg btn-block"><img
+                  src="pic/icons/helpdesk.png" alt="Help Desk" height="30px" width="30px">
+                Help Desk</button></a>
+            <a href="/user_changePassword"><button type="button" class="button-user-profile btn-lg btn-block"><img
+                  src="pic/icons/change_password.png" alt="change_password" height="30px" width="30px">
+                Change Password</button></a>
+            <a href="/user_chnageProfile_Picture"><button type="button" class="button-user-profile btn-lg btn-block">
+                <img src="pic/icons/change_profile_pic.png" alt="Change Profile Picture" height="30px" width="30px">
+                Change Profile Picture</button></a>
+          </div>
+        </div>
+        <div class="user_profile_frm col-md-9">

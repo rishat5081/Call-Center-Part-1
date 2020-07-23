@@ -1,0 +1,32 @@
+<%include  Web_Template_Pages/userProfile_headers.ejs%>
+
+<form action="/helpdesk_POSTmethod" method="POST">
+  <%=  typeof messagestatus != 'undefined' ? messagestatus : ''%>
+  <div class="col-lg-4">
+    <label>Name</label><br>
+    <input id='help_desk_username' type="text" name="helpdesk_username" placeholder="Name">
+
+
+    <label>Subject</label><br>
+    <input id='help_desk_subject' type="text" name="helpdesk_subject" placeholder="Subject">
+
+    <label>Email</label><br>
+    <input id='help_desk_email' type="email" name="helpdesk_email" placeholder="Email">
+  </div>
+  <div class="col-lg-12">
+    <label>Message</label><br>
+    <!-- <input id='help_desk_message' type="text" name="help_username" placeholder="Enter the Message"> -->
+    <textarea rows="2" cols="53" id="helpdesk_message" name="helpdesk_message"
+      placeholder="Enter the Message"> </textarea>
+  </div>
+  <div class="col-lg-3">
+    <button type="submit" class='help_desk_button'>Send
+
+    </button>
+  </div>
+</form>
+</div>
+</div>
+
+
+<% include  Web_Template_Pages/footer.ejs %>
