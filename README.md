@@ -6,4 +6,4 @@ there is database missing so you can not use the web.
 
 
 
-This is the product of itz-solutions.com
+This is the product of http://itz-solutions.com
