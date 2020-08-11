@@ -7,6 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/userProfile.css">
   <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/font-awesome.css">
@@ -60,7 +61,7 @@
     <div class="row" style="margin-top: 4%;">
 
 
-      <div class="col-md-3">
+      <div class="col-md-3 col-lg-3 col-xs-3 col-sm-3">
         <div class="sideBar left">
           <div>
 
@@ -70,35 +71,66 @@
             <img src="<%= userProfile_Pic%>" class="card-img-top" height="240" width="280" style="border: solid;">
             <%}%>
           </div>
-          <a href="/user_Dashboard"><button type="button" 
-                  class="button-user-profile btn-lg btn-block "> <img src="pic/icons/dashboard.png" alt="Dashboard" height="30px" width="30px">
-                  DashBoard</button></a>
-          <a href="/user_profile"><button type="button"
-                  class="button-user-profile btn-lg btn-block"> <img src="pic/icons/profile.png" alt="Profile" height="30px" width="30px">
-                  My Profile</button></a>
-          <a href="/user_extenstion"><button type="button"
-                  class="button-user-profile btn-lg btn-block"><img src="pic/icons/extension.png" alt="Extension" height="30px" width="30px">
-                  Extensions</button></a>
-                  <% if (user === 'rishat.5081@gmail.com') { %>
-            <a href="/user_vallet"><button type="button" class="button-user-profile btn-lg btn-block"> <img
-                  src="pic/icons/vallet.png" alt="My Vallet" height="30px" width="30px">
-                Testing</button></a>
+          <a href="/user_Dashboard" type="button" class="button-user-profile btn-lg btn-block "> 
+            <img src="pic/icons/dashboard.png" alt="Dashboard" height="30px" width="30px">
+                  DashBoard</a>
+
+
+
+
+          <a href="/user_profile"type="button" class="button-user-profile btn-lg btn-block"> 
+            <img src="pic/icons/profile.png" alt="Profile" height="30px" width="30px">
+                  My Profile</a>
+
+
+
+          <a href="/user_extenstion" type="button" class="button-user-profile btn-lg btn-block">
+                  <img src="pic/icons/extension.png" alt="Extension" height="30px" width="30px">
+                  Extensions</a>
+
+
+
+                  <!-- checking if the user is customer then a tab will be added of the contact -->
+                  <% if (user  ) { %>
+            <a href="/userphone_Contact" type="button" class="button-user-profile btn-lg btn-block">
+              <img src="pic/icons/phoneDirectory.png" alt="My Vallet" height="30px" width="30px">
+              Contacts</a>
             <% } %>
-            <a href="/user_vallet"><button type="button" class="button-user-profile btn-lg btn-block"> <img
-                  src="pic/icons/vallet.png" alt="My Vallet" height="30px" width="30px">
-                My Vallet</button></a>
-            <a href="/user_usage"><button type="button" class="button-user-profile btn-lg btn-block"><img
-                  src="pic/icons/logs.png" alt="Call Logs" height="30px" width="30px">
-                Logs</button></a>
-            <a href="/user_helpdesk"><button type="button" class="button-user-profile btn-lg btn-block"><img
-                  src="pic/icons/helpdesk.png" alt="Help Desk" height="30px" width="30px">
-                Help Desk</button></a>
-            <a href="/user_changePassword"><button type="button" class="button-user-profile btn-lg btn-block"><img
-                  src="pic/icons/change_password.png" alt="change_password" height="30px" width="30px">
-                Change Password</button></a>
-            <a href="/user_chnageProfile_Picture"><button type="button" class="button-user-profile btn-lg btn-block">
-                <img src="pic/icons/change_profile_pic.png" alt="Change Profile Picture" height="30px" width="30px">
-                Change Profile Picture</button></a>
+
+            <!-- if the user role is the call center then a tab of creating a virtual call center is added -->
+            <% if (user) { %>
+            <a href="/createCall_Center" type="button" class="button-user-profile btn-lg btn-block"> <img
+                src="pic/icons/virtualCall_Center.png" alt="My Vallet" height="30px" width="30px">
+              Create a Call Center</a>
+            <% } %>
+
+
+
+            <a href="/user_vallet" type="button" class="button-user-profile btn-lg btn-block">
+              <img src="pic/icons/vallet.png" alt="My Vallet" height="30px" width="30px">
+              My Vallet</a>
+
+
+
+            <a href="/user_usage" type="button" class="button-user-profile btn-lg btn-block">
+              <img src="pic/icons/logs.png" alt="Call Logs" height="30px" width="30px">
+              Logs</a>
+
+            <a href="/user_helpdesk" type="button" class="button-user-profile btn-lg btn-block">
+              <img src="pic/icons/helpdesk.png" alt="Help Desk" height="30px" width="30px">
+              Help Desk</a>
+
+
+
+            <a href="/user_changePassword" type="button" class="button-user-profile btn-lg btn-block">
+              <img src="pic/icons/change_password.png" alt="change_password" height="30px" width="30px">
+              Change Password</a>
+
+
+
+            <a href="/user_chnageProfile_Picture" type="button" class="button-user-profile btn-lg btn-block">
+              <img src="pic/icons/change_profile_pic.png" alt="Change Profile Picture" height="30px" width="30px">
+              Change Profile Picture</a>
           </div>
         </div>
         <div class="user_profile_frm col-md-9">

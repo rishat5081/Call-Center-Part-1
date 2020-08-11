@@ -16,6 +16,7 @@ app.set('views', [__dirname + '/views', __dirname + '/views/Web_Pages',
 __dirname + '/views/User_Profile_Pages',
 __dirname + '/views/Web_Pages/did_Pages',
 __dirname + '/views/Admin_Portal_Pages',
+__dirname + '/views/emailTemplates',
 __dirname + '/views/Web_Pages/solution_Pages']);
 
 
@@ -56,9 +57,11 @@ app.use(function (req, res, next) {
 /**
  * Getting the routes pages to render the different pages on the web all pages are in the file /routes/EJS_file_routes
  */
-const routes_pages = require('./routes/EJS_file_routes')
+const routesOf_WebPages = require('./routes/EJS_file_routes')
+const routesOf_User_Profile = require('./routes/userProfile_Routes')
 // using the routes of the home page and all the user profile pages
-app.use('/', routes_pages)
+app.use('/', routesOf_WebPages.router)
+app.use('/', routesOf_User_Profile)
 /*
 getting the routes and controllers for the admin 
 */
@@ -137,3 +140,8 @@ app.listen(process.env.port, () => {
 //     else
 //      console.log(2)
 // })
+
+
+
+
+

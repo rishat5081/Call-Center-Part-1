@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+<body>
+    <section class="header" style="text-align: center !important;">
+        <div class="container" style="background-color: #292B2C; 
+        padding-top: 13px; padding-bottom: 13px;">
+            <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" id="mainLogo_Successfully_Verified_page">
+                    <img src="https://www.pakeproperty.com/assets/img/pakeproperty-logo.png" alt="Main Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" id="helpDesk_Body" style=" padding-left: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: grid; margin-top: 5%;  font-style: normal;">
+        <div style="font-weight: 500; font-size: medium;">
+            <p>Greeting Admin,</p>
+            <p>Sir i have requested for the new Call Center... Here are the details of my Call Center ::: </p>
+        </div>
+        <p>Call Center Name : <strong> <%=callCenterName%></strong></p>
+        <p>Number Of Seats : <strong> <%=no_Of_Seat%> </strong> </p>
+        <p>name of Compaing : <strong> <%=nameofCompaing%> </strong> </p>
+        <p>Name Of Country : <strong> <%=nameOfCountry%> </strong> </p>
+        <p>InBound or OutBound : <strong> <%=inbound_outbound_select%> </strong> </p>
+        <p>Contact Number : <strong> <%=contactNumber%> </strong> </p>
+        <p>Address : <strong> <%=address%> </strong> </p>
+        <% if (checkBox) { %>
+        <p>Number Of Call Backs : <strong><%=numberOf_Callback%></strong></p>
+        <% } %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<%include  Web_Template_Pages/userProfile_headers.ejs%>
+
+<div class="col-lg-9">
+    <div id="createCall_Center_heading">
+        <h3>Create a Call Center</h3>
+    </div>
+    <div class="alert alert-danger" role="alert" id="onError_Alert" style="display: none;">
+
+    </div>
+    <div class="alert alert-success" role="alert" id="onSuccess_Alert" style="display: none;">
+
+    </div>
+    <div id="createCall_Center_Form">
+        <div class="col-lg-5">
+            <label for="callCenterName">Call Center Name</label>
+            <input type="text" id="callCenterName" placeholder="Enter Call Center Name" required>
+        </div>
+        <div class="col-lg-5">
+            <label for="no_of_Seats">No. of Seats</label>
+            <input type="number" id="no_of_Seats" placeholder="Enter Number of Seats" required>
+        </div>
+        <div class="col-lg-5">
+            <label for="nameofCompaing">Compaing </label>
+            <input type="text" id="nameofCompaing" placeholder="Enter Compaing Name" required>
+        </div>
+        <div class="col-lg-5">
+            <label for="nameOfCountry">Routes / Dialing Country </label>
+            <input type="text" id="nameOfCountry" placeholder="Enter Routes / Dialing Country" required>
+        </div>
+        <div class="col-lg-5">
+            <label for="nameOfCountry">Address</label>
+            <input type="text" id="address" placeholder="Enter Address" required>
+        </div>
+        <div class="col-lg-5">
+            <label for="nameOfCountry">Contact Number </label>
+            <input type="text" id="contactNumber" placeholder="Enter Contact Number" required>
+        </div>
+
+        <div id="callBack_Number_checkbox_Div" class="col-lg-5">
+            <label for="checkbox">Do you want CallBack Number? </label>
+            <br>
+            <div>
+                <label for="checkbox"> <input type="checkbox" id="callback_Dialing_YES_checkBox">Yes</label>
+                <!-- <label for="checkbox"> <input type="checkbox" id="callback_Dialing_NO_checkBox">No</label> -->
+            </div>
+        </div>
+
+        <div id="callBack_Numbers_Div" style="display:none" class="col-lg-5">
+            <label for="numberOf_Callback">Number of CallBack Numbers</label>
+            <input type="number" id="numberOf_Callback" placeholder="Enter Number of Call Number" required>
+        </div>
+        <div class="col-lg-5">
+            <label for="nameOfCountry">Select the Type </label>
+            <select id="inbound_outbound_select" required>
+                <option value="In-Bound">In-Bound</option>
+                <option value="Out-Bound">Out-Bound</option>
+                <option value="Both">Both</option>
+            </select>
+
+        </div>
+        <div class="col-lg-9">
+            <button type="submit" class="btn" onclick="createCall_Center()">Create Call Centre </button>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</div>
+<script>
+    // displaying the div of the Call Back Input field on click of the check box
+    $('#callback_Dialing_YES_checkBox').click(function () {
+        $("#callBack_Numbers_Div").toggle(this.checked)
+    });
+
+    // Create Call Center button on click function which will bring 
+    // all the forms values and pass it to the node server using AJAX
+    
+    function createCall_Center() {
+        // AJAX Call for the email to the admin to create a new call center
+        $.ajax({
+            url: '/createCall_Center_Ajax',
+            method: 'POST',
+            data: {
+                callCenterName: document.getElementById('callCenterName').value,
+                no_Of_Seat: document.getElementById('no_of_Seats').value,
+                nameofCompaing: document.getElementById('nameofCompaing').value,
+                nameOfCountry: document.getElementById('nameOfCountry').value,
+                numberOf_Callback: document.getElementById('numberOf_Callback').value,
+                inbound_outbound_select: document.getElementById('inbound_outbound_select').value,
+                address: document.getElementById('address').value,
+                contactNumber: document.getElementById('contactNumber').value,
+                callback_Dialing_YES_checkBox: document.getElementById('callback_Dialing_YES_checkBox').checked ? 1 : 0
+            },
+            error: ((error) => {
+                $("#onError_Alert").html('Sorry there is an Error')
+                $("#onError_Alert").toggle(this.show)
+                setTimeout(() => {
+                    $("#onError_Alert").toggle(this.hide)
+                }, 3000)
+            }),
+            success: ((AjaxResponse) => {
+
+                $("#onSuccess_Alert").html('Your Request has been submitted. We will contact you soon !')
+                $("#onSuccess_Alert").toggle(this.show)
+                setTimeout(() => {
+                    $("#onSuccess_Alert").toggle(this.hide)
+                }, 3000)
+            })
+        })
+    }
+</script>
+<% include  Web_Template_Pages/footer.ejs %>

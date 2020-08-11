@@ -4,36 +4,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <%include  Web_Template_Pages/userProfile_headers.ejs%>
-
-<head>
-  <style>
-    table {
-      border-collapse: collapse;
-    }
-
-    th {
-      background-color: #292B2C;
-      Color: white;
-    }
-
-    th,
-    td {
-      width: 150px;
-      text-align: center;
-      padding: 2px
-    }
-
-    .geeks {
-      border-right: hidden;
-    }
-
-    .gfg {
-      border-collapse: separate;
-      border-spacing: 0 5px;
-    }
-  </style>
-</head>
-
 <div class="col-sm-6">
 
   <h2>My Vallet : <%=user_vallet_amount%> </h2>
@@ -47,7 +17,7 @@
 
 
 <!-- Table for the display of the user usage history where he/she spend the credit -->
-<div class="table-responsives col-lg-12">
+<div class="table-responsives col-lg-9" id="user_Vallet_Table">
 
   <table>
     <tr>

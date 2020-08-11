@@ -1,61 +1,37 @@
 <%include  Web_Template_Pages/userProfile_headers.ejs%>
+<div class="col-sm-12">
 
-<head>
-  <style>
-    table {
-      border-collapse: collapse;
-    }
+  <h2>Log History </h2>
+</div>
+<br>
+<div class="table-responsive col-sm-12" id="user_Vallet_Table">
 
-    th {
-      background-color: #292B2C;
-      Color: white;
-    }
-
-    th,
-    td {
-      width: 150px;
-      text-align: center;
-      padding: 2px
-    }
-
-    .gfg {
-      border-collapse: separate;
-      border-spacing: 0 5px;
-    }
-  </style>
-</head>
-  <div class="col-sm-12">
-
-    <h2>Log History </h2>
-  </div>
-  <br>
-  <div class="table-responsive col-sm-12">
-
-    <table>
-      <tr>
-        <!-- table for the header of the call logs of the table -->
-        <th>Name</th>
-        <th>Number</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Call Ended</th>
-        <th>Duration</th>
-      </tr>
-    </table>
-    <table class="gfg" id="myTable">
-      <!-- table for the columns of the user to display the logs  -->
-      <% for(var i = 0; i < sqlResponse.length; i++ ) {  %>
-      <tr>
-        <td><%=sqlResponse[i].callto_Name%></td>
-        <td><%=sqlResponse[i].callto_ext%></td>
-        <td><%=sqlResponse[i].callto_date%></td>
-        <td><%=sqlResponse[i].call_start_time%></td>
-        <td><%=sqlResponse[i].call_end_time%></td>
-        <td><%=sqlResponse[i].duration_time%></td>
-      </tr>
-      <% }  %>
-    </table>
-  </div>
+  <table>
+    <tr>
+      <!-- table for the header of the call logs of the table -->
+      <th>Name</th>
+      <th>Number</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Call Ended</th>
+      <th>Duration</th>
+    </tr>
+  </table>
+  <table class="gfg" id="myTable">
+    <!-- table for the columns of the user to display the logs  -->
+    <%sqlResponse.forEach(element => { %>
+    <tr>
+      <td><%=element.callto_Name%></td>
+      <td><%=element.callto_ext%></td>
+      <td><%=element.callto_date%></td>
+      <td><%=element.call_start_time%></td>
+      <td><%=element.call_end_time%></td>
+      <td><%=element.duration_time%></td>
+    </tr>
+    <%}); %>
+  
+  </table>
+</div>
 </div>
 </div>
 <% include  Web_Template_Pages/footer.ejs %>

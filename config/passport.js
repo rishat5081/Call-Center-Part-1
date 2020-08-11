@@ -25,7 +25,6 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (email, done) {
-    console.log(email)
     connection.query('select * from user where email = ?', [email], (error, rows) => {
         if (error)
             console.log("Deserial Error" + error)

@@ -3,9 +3,11 @@ const express = require('express'),
     mysql = require('mysql'),
     sqlFile = require('../config/Mysql/mysql')
 
+// ========================================== Middleware functions for the user loggin or not ========================================== 
 var user_logged_In = (req, res, next) => {
     console.log('The IP address of connected user is :: ', req.connection.remoteAddress)
     if (req.isAuthenticated()) {
+        console.log(req.session.passport.user)
         res.locals.user = req.session.passport.user
         next()
     }
@@ -39,8 +41,6 @@ router.get('/', not_logged_in, (req, res, next) => {
         if (error)
             console.log('Error occur at the Fetching Rates From Database Response')
         else {
-            //console.log(sqlResponse);
-
             res.render('index', {
                 sqlResponse: sqlResponse
             })
@@ -75,6 +75,8 @@ router.get('/logout', not_logged_in, (req, res) => {
 router.get('/forgetPassword', not_logged_in, (req, res, next) => {
     res.render('forgetPassword')
 })
+
+
 // ========================================== DID Tab on Navigation Bar ========================================== 
 
 // ========================================== DID Page ========================================== 
@@ -163,98 +165,7 @@ router.get('/callCentre_Solution', not_logged_in, (req, res, next) => {
     //res.render('WholeSale_Solution')
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ========================================== User Profile Routes ========================================== 
-
-router.get('/user_Dashboard', user_logged_In, (req, res, next) => {
-    console.log(req.session.passport.user + '  is Logged in')
-    res.render('user_Dashboard', { userProfile_Pic: req.user.profile_img_path })
+router.get('/abc', not_logged_in, (req, res, next) => {
+    res.render('successEmail_Verify')
 })
-router.get('/user_profile', user_logged_In, (req, res, next) => {
-    console.log(req.user.phoneNumber)
-    const extention = req.user.phoneNumber.split('##')
-    console.log(extention[1])
-    res.render('user_profile', {
-        username: req.user.username, name: req.user.fullname, user_email: req.user.email, user_Country: req.user.country,
-        user_city: req.user.city, user_phoneExtention: extention[0], user_phoneNumber: extention[1],
-        userProfile_Pic: req.user.profile_img_path
-    })
-
-
-})
-
-router.get('/user_extenstion', user_logged_In, (req, res, next) => {
-    res.render('user_extenstion', { userProfile_Pic: req.user.profile_img_path, user_extention: req.user.id })
-})
-
-
-
-router.get('/user_usage', user_logged_In, (req, res, next) => {
-
-    connection = mysql.createConnection(sqlFile.connection)
-    query = 'Use ' + sqlFile.databasename
-    connection.query(query)
-    console.log('Data Base Connected in User Log History.')
-
-    connection.query(`SELECT L.* FROM logs L LEFT OUTER JOIN user R ON R.id = L.log_fk WHERE L.log_fk = ?`, [req.user.id], (error, sqlResponse) => {
-        if (error)
-            console.log('Error occur at the User Logs History Database Response')
-        else {
-            res.render('user_usage', {
-                user_vallet_amount: req.user.credit,
-                userProfile_Pic: req.user.profile_img_path,
-                sqlResponse
-            })
-        }
-    })
-})
-
-
-router.get('/user_vallet', user_logged_In, (req, res, next) => {
-    res.render('user_vallet', { user_vallet_amount: req.user.user_vallet_amount, userProfile_Pic: req.user.profile_img_path })
-})
-
-router.get('/user_helpdesk', user_logged_In, (req, res, next) => {
-    res.render('user_helpdesk', { userProfile_Pic: req.user.profile_img_path })
-})
-
-router.get('/user_changePassword', user_logged_In, (req, res, next) => {
-    res.render('user_changePassword', { userProfile_Pic: req.user.profile_img_path })
-})
-
-router.get('/user_chnageProfile_Picture', user_logged_In, (req, res, next) => {
-    res.render('user_chnageProfile_Picture', { userProfile_Pic: req.user.profile_img_path })
-})
-
-
-router.get('/verify', (req, res, next) => {
-    res.render('pleaseVerifyEmail')
-})
-
-
-module.exports = router, user_logged_In
+module.exports = { router, user_logged_In, not_logged_in }

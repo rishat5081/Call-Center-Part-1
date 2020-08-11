@@ -2060,417 +2060,6 @@ footer {
     padding-left: 66px;
 }
 
-/*==================================Profile Design==================================*/
-
-.profile_design .image {
-    padding: 5px;
-}
-
-.sideBar {
-    margin-top: 4%;
-    display: block;
-    padding: 15px;
-    background: #ffffff;
-    color: black;
-    text-transform: capitalize;
-    font-weight: 600;
-    font-family: helvetica;
-    position: relative;
-    transition: 0.4s all;
-    outline: none;
-    margin-left: 1px;
-    width: 70%;
-}
-
-.sideBarButton {
-    margin-top: 5px;
-    padding: 5px;
-    margin-bottom: 5px;
-    size: 10px;
-    width: 222px;
-    display: block;
-    background: #2ba7d8;
-    color: black;
-    text-transform: capitalize;
-    font-weight: 600;
-    font-family: helvetica;
-    border: 1px solid #292B2C;
-    position: relative;
-    transition: 0.4s all;
-    outline: none;
-}
-
-.user_profile_frm {
-    width: 78%;
-    margin: 0 auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    padding: 30px;
-    background-color: white;
-    display: flow-root;
-    float: right;
-    /* margin-left: -4%; */
-}
-
-/* .user_profile_frm_extension_button
-{
-    display: block;
-    padding: 10px 40px;
-    background: #ffffff;
-    color: black;
-    text-transform: capitalize;
-    font-weight: 600;
-    font-family: helvetica;
-    border: 1px solid #292B2C;
-    position: relative;
-    transition: 0.4s all;
-    float: left;
-    margin-left: 367px;
-    outline: none;
-    margin-top: 5%;
-} */
-
-.user_profile_frm input {
-    width: 90%;
-    margin: 0 auto;
-    display: block;
-    padding: 15px 0px 15px 40px;
-    border: 1px solid #292B2C;
-    border-radius: 0px 40px 40px 0px;
-    background: #ffffff;
-    outline: none;
-    position: relative;
-    margin-top: 0px;
-    box-shadow: 0px 1px 6px #a1a1a15e;
-    transition: 0.3s all;
-}
-
-.user_profile_frm select {
-    width: 90%;
-    margin: 0 auto;
-    display: block;
-    padding: 15px 0px 15px 28px;
-    border: 1px solid #9e949440;
-    border-radius: 0px 40px 40px 0px;
-    background: #ffffff;
-    outline: none;
-    position: relative;
-    margin-top: 0px;
-    box-shadow: 0px 1px 6px #a1a1a15e;
-    transition: 0.3s all;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    float: left;
-    width: 50%;
-}
-
-.user_profile_frm input:focus {
-    box-shadow: 0px -1px 4px #00000042, 0px 2px 4px #0a99ffc7;
-}
-
-.form-group .fa {
-    position: absolute;
-    margin-left: 0px;
-    z-index: 50;
-    margin-top: 1px;
-    color: #ffffff;
-    background-color: #353535;
-    padding: 18px 0px;
-    width: 45px;
-    text-align: center;
-    border-radius: 25px 0px 0px 25px;
-}
-
-.user_profile_frm button {
-    display: block;
-    padding: 10px 40px;
-    background: #ffffff;
-    color: black;
-    text-transform: capitalize;
-    font-weight: 600;
-    font-family: helvetica;
-    border: 1px solid #292B2C;
-    position: relative;
-    transition: 0.4s all;
-    float: left;
-    margin-left: 367px;
-    outline: none;
-    margin-top: 3%;
-}
-
-.user_frm_profile_labels {
-    margin-left: 5%;
-}
-
-.extnsn {
-    margin-left: 367px !important;
-}
-
-.user_profile_frm button:hover {
-    border: 1px solid transparent;
-}
-
-.user_profile_frm button:before {
-    position: absolute;
-    display: block;
-    content: '';
-    border-top: 2px solid;
-    border-image: linear-gradient(to right, transparent, black);
-    border-image-slice: 1;
-    width: 0%;
-    left: 0px;
-    top: 0px;
-    transition: 0.3s all;
-}
-
-.user_profile_frm button:after {
-    position: absolute;
-    display: block;
-    content: '';
-    border-top: 2px solid;
-    border-image: linear-gradient(to left, transparent, black);
-    border-image-slice: 1;
-    width: 0%;
-    right: 0px;
-    bottom: 0px;
-    transition: 0.3s all;
-}
-
-.user_profile_frm button:hover:before, .user_profile_frm button:hover:after {
-    width: 100%;
-}
-
-.button-user-profile {
-    text-align: left;
-    color: #279cd8;
-    background: #292B2C;
-    font-family: Helvetica, sans-serif;
-    font-weight: normal !important;
-}
-
-.button-user-profile:hover {
-    color: gray;
-}
-
-#manage_extention_btn {
-    margin-left: 0% !important;
-}
-
-.u20_div {
-    border-width: 0px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 227px;
-    height: 53px;
-    background: inherit;
-    background-color: rgba(41, 43, 44, 1);
-    border: none;
-    border-radius: 0px;
-    border-top-left-radius: 0px;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    font-size: 18px;
-    color: rgba(127, 127, 127, 0.509803921568627);
-}
-
-#userProfile_country_code_prefix {
-    position: absolute;
-    z-index: 9999;
-    margin-left: -65px;
-    margin-top: 41px;
-}
-
-.vertical-alignment-helper {
-    display: table;
-    height: 100%;
-    width: 100%;
-}
-
-.vertical-align-center {
-    /* To center vertically */
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.modal-content {
-    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
-    width: inherit;
-    height: inherit;
-    /* To center horizontally */
-    margin: 0 auto;
-}
-
-.usage_table {
-    padding: 5px;
-}
-
-.usage_manage_button {
-    margin-left: 0px !important;
-    margin-bottom: 10px;
-}
-
-.table-responsives {
-    min-height: .01%;
-    overflow-x: inherit;
-}
-
-/*==================================Profile ==================================*/
-
-/*==================================User Help Desk desgin ==================================*/
-
-.help_desk_button {
-    margin: 12px;
-}
-
-#helpdesk_message {
-    height: 250px;
-    margin-left: 19px;
-    border: 1px solid #292B2C;
-}
-
-/*==================================Profile ==================================*/
-
-/*==================================User DashBoard ==================================*/
-
-.temp {
-    float: right;
-    width: 40%;
-    margin-top: 3%;
-    margin-right: 15%;
-}
-
-.clockCanvas {
-    background-color: #292B2C;
-    border: solid;
-    /* margin-left: 688px; */
-    /* margin-right: 223px; */
-    /* margin-right: 150px; */
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border: solid;
-    padding-left: 10px;
-}
-
-#weatherDIV {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    /* border: solid; */
-    padding-left: 10px;
-}
-
-/*==================================Profile ==================================*/
-
-/*==================================Add to Cart ==================================*/
-
-.drp-menu {
-    display: none;
-    width: 100%;
-    border: 2px solid #292b2c;
-}
-
-.drp-menu ul {
-    margin-left: 0px;
-}
-
-.drp-menu li {
-    background-color: white;
-    position: relative;
-    border-radius: 0px;
-    border-bottom: 1px solid black;
-    width: 100%;
-    margin-left: 0px;
-}
-
-.drp {
-    position: inherit !important;
-}
-
-.drp-menu li a {
-    color: white;
-}
-
-.drp:hover .drp-menu {
-    display: block;
-    position: absolute;
-    right: 247px;
-    margin-left: 0 !important;
-    z-index: 999;
-    margin-top: 12px;
-    transition: 0.3s all;
-    width: 35%;
-}
-
-.shopping-cart-total {
-    float: right;
-}
-
-.crt-nmbr {
-    float: left;
-}
-
-.chk-btn {
-    float: left;
-    text-align: center;
-    color: black;
-    background-color: white;
-}
-
-.mnu-bg {
-    background-color: #292b2c;
-    display: flow-root;
-    padding: 10px;
-}
-
-.cart img {
-    margin-left: -2%;
-}
-
-.cart input {
-    width: 9%;
-    background-color: #292b2c;
-    color: white;
-    border: 1px solid #279cd8;
-    float: right;
-}
-
-.cart img {
-    float: left;
-    width: 50px;
-    height: 50px;
-}
-
-.cart span {
-    width: 78%;
-    float: left;
-    text-align: left;
-    padding: 2%;
-}
-
-.cart-footer {
-    background-color: #292b2c;
-    display: flow-root;
-    padding: 10px;
-}
-
-.cart-footer button {
-    background-color: #292b2c;
-    color: #279cd8;
-    width: 50%;
-}
-
-#saveChnages_Modal_footer_btn {
-    background-color: #262626;
-    color: #279cd8;
-}
-
-.citiesName {
-    overflow-y: hidden !important;
-}
-
 /*==================================DID.EJS PAGE ==================================*/
 
 /*==================================DID Table==================================*/
@@ -2584,7 +2173,7 @@ footer {
     margin-top: 0% !important;
 }
 
-/*--------------------------------------- Did Package Page          */
+/*--------------------------------------- Did Package Page  -----------------------------------        */
 
 .didPackages {
     width: 100%;
@@ -2673,9 +2262,11 @@ footer {
     /* overflow-y: hidden !important; */
     height: 227px !important;
 }
-#countryList_div button{
+
+#countryList_div button {
     width: 100%;
 }
+
 #countryList_div img {
     height: 20px;
     width: 20px;
@@ -2707,10 +2298,48 @@ footer {
     margin-top: 4%;
     margin-left: 42%;
 }
+
 /* ------------------------------ Call Center page --------------------------- */
-.callCenter_Modal{
+
+.callCenter_Modal {
     margin-top: 5%;
 }
-.callCenter_Modal_Body_div{
-    
+
+/* ------------------------------ Successfully Verified Page ------------------------------ */
+
+#successfullyVerified_Image {
+    text-align: center;
+    /* margin-left: 40%; */
+    margin-top: 6%;
+}
+
+#successfullyVerified_Image img {
+    height: 250px;
+    width: 250px;
+}
+
+#successfullyVerified_Image h4 {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: -1px;
+    line-height: 48px;
+}
+
+#mainLogo_Successfully_Verified_page img {
+    width: 70px;
+    height: 50px;
+}
+
+/* 15CWRY9L */
+
+#successfullyVerified_Btn a {
+    background-color: #292B2C;
+    display: inline-block;
+    padding: 16px 36px;
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
 }
