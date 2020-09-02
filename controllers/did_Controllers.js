@@ -113,7 +113,7 @@ module.exports = (app) => {
                     if (sqlResponse.length === 0) {
                         res.send({ sqlResponse: null, countryFlagName: req.body.did_Modal, user: req.session.passport })
                     } else {
-                      
+
                         res.send({ sqlResponse: sqlResponse, countryFlagName: req.body.did_Modal, user: req.session.passport })
 
                     }

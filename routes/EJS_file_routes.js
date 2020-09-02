@@ -93,11 +93,34 @@ router.get('/did', not_logged_in, (req, res) => {
     connection.query("select did_countryName from  did_rates", (error, response) => {
         if (error)
             console.log("Error at the country flag Sql::: ", error)
-        else
+        else {
+            console.log(response)
             res.render('DID', { countryName_sqlResponse: response, sqlResponse: null, USsqlResponse: null })
+        }
 
     })
 })
+
+//adding the data into the all_countries of_world into the database
+
+
+// connection = mysql.createConnection(sqlFile.connection)
+// query = 'Use ' + sqlFile.databasename
+// connection.query(query)
+// const country = require('../views/Countries Name with Country Code')
+// for (const key of country) {
+//     // connection.query(`INSERT INTO 'all_countries_of_world' ('All_country_name', 'All_country_code', 'All_dialling_code') VALUES ('${key.country_name}','${key.country_code}','${key.dialling_code}')`)
+//     // connection.query(`INSERT INTO all_countries_of_world (All_country_name, All_country_code, All_dialling_code) VALUES (${key.country_name},${key.country_code},${key.dialling_code})`)
+//     // connection.query(`INSERT INTO all_countries_of_world (All_country_name, All_country_code, All_dialling_code) VALUES ('${key.country_name}','${key.country_code}','${key.dialling_code}')`,(err,res)=>{
+//     if (!err)
+//         console.log(1);
+//     })
+// }
+// console.log('Ok')
+
+// // 
+
+
 
 router.get('/didPackages', not_logged_in, (req, res) => {
 
