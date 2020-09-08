@@ -76,7 +76,7 @@ admin_Controllers(app)
  * getting the passport file to get the passport configuration to signup and login for the local strategy
  */
 const user_passport_config = require('./config/passport')
-const admin_passport_config = require('./adminConfig/adminPassport')
+// const admin_passport_config = require('./adminConfig/adminPassport')
 //did and search rate pages routing 
 const didpages_Controller = require('./controllers/did_Controllers')
 
@@ -100,13 +100,13 @@ solution_controller(app)
  * by using the passport JS
  */
 
-app.post('/admin_login_form', admin_passport_config.authenticate('local-login',
-    {
-        successRedirect: '/admin/',
-        failureRedirect: '/admin/',
-        failureFlash: true
-    })
-);
+// app.post('/admin_login_form', admin_passport_config.authenticate('local-login',
+//     {
+//         successRedirect: '/admin/',
+//         failureRedirect: '/admin/',
+//         failureFlash: true
+//     })
+// );
 
 /**
  * Normal User log in and sign up 
