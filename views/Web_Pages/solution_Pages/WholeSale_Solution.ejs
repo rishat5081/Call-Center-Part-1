@@ -9,7 +9,7 @@
                 architecto quas saepe iure pariatur veniam inventore deserunt blanditiis ipsa consectetur quam incidunt.
                 Quasi, iusto?</p>
 
-            <% if (user === "wholeSale_user") { %>
+            <% if (user === "wholeSale_user" || user) { %>
 
 
             <div class="wholeSale_Contact_form col-lg-7 ">
@@ -27,9 +27,9 @@
 
                 <label for="contactNumber">Contact Number</label>
                 <input type="text" class="form-control" name="contactNumber" placeholder="Enter Contact">
-            
-                    <button type="button" class="btn">Submit</button>
-              
+
+                <button type="button" class="btn">Submit</button>
+
             </div>
             <% } else {  %>
             <div class="alert alert-danger" role="alert">

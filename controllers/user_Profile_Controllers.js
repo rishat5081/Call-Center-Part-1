@@ -249,7 +249,9 @@ module.exports = (app) => {
 
     app.post('/createCall_Center_Ajax', (req, res) => {
         connection_With_mySQL()
-        connection.query(`Insert into call_center_requests values (?,?,?,?,?,?,?)`,
+        connection.query(`Insert into call_center_requests (callCenterName, 
+                         no_Of_Seat, nameofCompaing, nameOfCountry, inbound_outbound_select, 
+                         callback_Dialing_YES_checkBox, numberOf_Callback) values (?,?,?,?,?,?,?)`,
             [req.body.callCenterName, req.body.no_Of_Seat, req.body.nameofCompaing,
             req.body.nameOfCountry, req.body.inbound_outbound_select,
             req.body.callback_Dialing_YES_checkBox, req.body.numberOf_Callback]
@@ -266,7 +268,7 @@ module.exports = (app) => {
             callCenterName: req.body.callCenterName, no_Of_Seat: req.body.no_Of_Seat, nameofCompaing: req.body.nameofCompaing,
             nameOfCountry: req.body.nameOfCountry, inbound_outbound_select: req.body.inbound_outbound_select,
             checkBox: req.body.callback_Dialing_YES_checkBox, numberOf_Callback: req.body.numberOf_Callback,
-            contactNumber : req.body.contactNumber,address : req.body.address
+            contactNumber: req.body.contactNumber, address: req.body.address
         }, (error, file) => {
             if (error)
                 console.log(error)
@@ -280,6 +282,7 @@ module.exports = (app) => {
 
     })
 
+    // That will be depend upon number of questions
 
     app.get('/123', (req, res) => {
         res.render('request_A_Call_Center', {
