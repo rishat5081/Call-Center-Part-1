@@ -24,7 +24,7 @@ router.get('/user_extenstion', middleWares_Fucntions.user_logged_In, (req, res, 
     res.render('user_extenstion', { userProfile_Pic: req.user.profile_img_path, user_extention: req.user.id })
 })
 
-router.get('/user_usage', middleWares_Fucntions.user_logged_In, (req, res, next) => {
+router.get('/user_usage',  middleWares_Fucntions.user_logged_In, (req, res, next) => {
 
     connection = mysql.createConnection(sqlFile.connection)
     query = 'Use ' + sqlFile.databasename

@@ -1,20 +1,39 @@
 <% include Web_Template_Pages/header.ejs %>
 
 
-<div class="col-lg-7">
-    <div class="didText">
-        <% include messages.ejs %>
-        <h1>Whole Sale DID's</h1>
-        <p>Voxbeam Telecommunications provides DIDs in over 50 countries around the world at prices starting as low
-            as $0.25 per number.</p>
 
-        <h2>Country overview</h2>
-        <h2><%= countryName %> </h2>
-        <h2><%=cityName %> </h2>
 
-        <p>Please click the country below to view the specific city coverage, pricing, and verification required..
-        </p>
+<div class="content">
+
+    <div class="container">
+        <div class="didPackages" style="margin-top: 10%;">
+            <div class="col-12">
+                <div class="card-body">
+
+                    <div class="col-lg-7">
+                        <div class="didText">
+                            <% include messages.ejs %>
+                            <h1>Whole Sale DID's</h1>
+                            <p>Voxbeam Telecommunications provides DIDs in over 50 countries around the world at prices
+                                starting as low
+                                as $0.25 per number.</p>
+
+                            <h2>Country overview</h2>
+                            <h2><%= countryName %> </h2>
+                            <h2><%=cityName %> </h2>
+
+                            <p>Please click the country below to view the specific city coverage, pricing, and
+                                verification required..
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
+
+
 
 <% include Web_Template_Pages/footer.ejs %>
